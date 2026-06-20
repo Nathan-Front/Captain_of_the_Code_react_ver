@@ -42,7 +42,7 @@ function Nav() {
   return (
     <>
       <nav className={`navbar ${hideNav ? "hide" : ""}`}>
-        <img src="/images/nav/logo.webp" alt="logo" className="logo" />
+        <img src="./images/nav/logo.webp" alt="logo" className="logo" />
         <span className="my-name">JT</span>
         <ul className={`nav-links-wrapper  ${mobileNav ? "openNav" : ""}`}>
           <li>
@@ -56,19 +56,19 @@ function Nav() {
           </li>
           <li className="nav-links">
             <Link to="index.html">
-              <img src="/images/nav/compassLink.webp" alt="anchor Icon" />
+              <img src="./images/nav/compassLink.webp" alt="anchor Icon" />
               VOYAGE
             </Link>
           </li>
           <li className="nav-links">
             <Link to="profile.html">
-              <img src="/images/nav/bagLink.webp" alt="bag Icon" />
+              <img src="./images/nav/bagLink.webp" alt="bag Icon" />
               MANIFEST
             </Link>
           </li>
           <li className="nav-links">
             <Link to="contact.html">
-              <img src="/images/nav/anchorLink.webp" alt="anchor Icon" />
+              <img src="./images/nav/anchorLink.webp" alt="anchor Icon" />
               DROP ANCHOR
             </Link>
           </li>
@@ -84,7 +84,7 @@ function Nav() {
                   Github
                 </a>
                 <img
-                  src="/images//footer/github-round-svgrepo-com.svg"
+                  src="./images//footer/github-round-svgrepo-com.svg"
                   alt="github"
                 />
               </li>
@@ -97,7 +97,7 @@ function Nav() {
                   LinkedIn
                 </a>
                 <img
-                  src="/images//footer/linkedin-round-svgrepo-com.svg"
+                  src="./images//footer/linkedin-round-svgrepo-com.svg"
                   alt="linkedIn"
                 />
               </li>
@@ -110,7 +110,7 @@ function Nav() {
                   Email
                 </a>
                 <img
-                  src="/images/footer/google-logo-fill-svgrepo-com.webp"
+                  src="./images/footer/google-logo-fill-svgrepo-com.webp"
                   alt="linkedIn"
                 />
               </li>
@@ -119,7 +119,7 @@ function Nav() {
           </li>
         </ul>
         <button className="mobile-nav-open" onClick={toggleMobileNav}>
-          <img src="/images/nav/telescopeLink.webp" alt="mobile-nav" />
+          <img src="./images/nav/telescopeLink.webp" alt="mobile-nav" />
           Menu
         </button>
         <div className="main-title-container">

@@ -1,0 +1,71 @@
+import { Link } from "react-router-dom";
+
+function VoyageFirstSection() {
+  return (
+    <>
+      <section className="about-section" id="about">
+        <h1 className="split-reveal" data-text="Welcome Aboard!">
+          Welcome Aboard!
+        </h1>
+        <p className="typewriter-text" id="multiline-typewriter">
+          Serving as a Technical Instructor for a Japanese company, I spend my
+          days helping crewmates navigate their learning journeys. Beyond my
+          duties, I have devoted the past year to exploring the ever-changing
+          seas of Web Development, steadily building a strong foundation in
+          modern web technologies. Each new project is another voyage, each
+          challenge another storm to overcome, as I continue my quest to grow
+          into a capable and dependable developer.
+        </p>
+        <Link to="/" className="contact-btn">
+          Contact The Captain
+        </Link>
+        <div className="map">
+          <svg
+            className="route-svg"
+            viewBox="0 0 1000 200"
+            preserveAspectRatio="none"
+          >
+            <path
+              id="route"
+              d="M950 100
+          C750 0, 650 200, 500 120
+          C350 40, 300 250, 150 150
+          C80 100, 50 50, 20 100
+          "
+            />
+            <g className="treasure-x" transform="translate(20 100)">
+              <line x1="-6" y1="-6" x2="6" y2="6" />
+              <line x1="-6" y1="6" x2="6" y2="-6" />
+            </g>
+            <image
+              href="./images/footer/pirateship.webp"
+              x="-20"
+              y="-15"
+              width="30"
+              height="15"
+              transform="scale(2,1)"
+              className="ship"
+            >
+              <animateMotion
+                dur="30s"
+                repeatCount="indefinite"
+                rotate="auto-reverse"
+              >
+                <mpath href="#route" />
+              </animateMotion>
+              <animate
+                attributeName="opacity"
+                values="1;1;0.2"
+                keyTimes="0;0.7;1"
+                dur="30s"
+                repeatCount="indefinite"
+              />
+            </image>
+          </svg>
+        </div>
+      </section>
+    </>
+  );
+}
+
+export default VoyageFirstSection;

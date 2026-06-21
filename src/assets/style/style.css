@@ -4,7 +4,7 @@ body[data-page="voyage"] {
     width: 100%;
 }
 body[data-page="voyage"]>.footer-section  {
-    background-image: url("../images/footer/moonlight.webp");
+    background-image: url("./images/footer/moonlight.webp");
     background-repeat: repeat-y;
     background-size: 100% auto;
     background-position: center;
@@ -37,7 +37,7 @@ body[data-page="voyage"]>.footer-section::after {
 body[data-page="profile"] {
     background-image:
         linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)),
-        url("../images/cv/background.webp");
+        url("./images/cv/background.webp");
     background-blend-mode:multiply;
    
     background-repeat: no-repeat;
@@ -47,7 +47,7 @@ body[data-page="profile"]>.footer-section  {
     background-color: rgba(27, 73, 101, 0.5);
 }
 body[data-page="contact"] {
-    background-image: url("../images/contact/contact.webp");
+    background-image: url("./images/contact/contact.webp");
     margin-top: 100px;
 }
 body[data-page="contact"]>.footer-section {
@@ -72,14 +72,14 @@ body {
 }
 @media only screen and (max-width: 640px) {
     body[data-page="profile"] {
-        background-image: url("../images/cv/mobileBackground.webp");
+        background-image: url("./images/cv/mobileBackground.webp");
     }
     body[data-page="contact"] {
-        background-image: url("../images/cv/mobileBackground.webp");
+        background-image: url("./images/cv/mobileBackground.webp");
 
     }
     body {
-        background-image: url("../images/cv/mobileBackground.webp");
+        background-image: url("./images/cv/mobileBackground.webp");
     }
     html.no-scroll,
     body.no-scroll {

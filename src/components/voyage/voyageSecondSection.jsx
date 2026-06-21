@@ -1,36 +1,38 @@
 import { useState, useEffect, useRef } from "react";
+import { Fragment } from "react";
+import { description, timelineContent } from "./data/voyageSecondSection.js";
 
 function VoyageSecondSection() {
-  const [isDateSlide, setIsDateSlide] = useState(false);
-  const [isTimelineText, setIsTimelineText] = useState(false);
-  const dateRef = useRef(null);
-  const textRef = useRef(null);
+  const [isTimelineSlide, setIsTimelineSlide] = useState({});
+  const timelineContentRef = useRef([]);
+  const isMobile = window.innerWidth <= 845;
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.target === dateRef.current) {
-            setIsDateSlide(entry.isIntersecting);
-          }
+          const index = entry.target.dataset.index;
 
-          if (entry.target === textRef.current) {
-            setIsTimelineText(entry.isIntersecting);
-          }
+          setIsTimelineSlide((prev) => ({
+            ...prev,
+            [index]: entry.isIntersecting,
+          }));
         });
       },
       {
-        threshold: 0.1,
+        threshold: isMobile ? 0.05 : 0.2,
+        rootMargin: "100px 0px 300px 0px",
       },
     );
-    if (dateRef.current) observer.observe(dateRef.current);
-    if (textRef.current) observer.observe(textRef.current);
-
+    timelineContentRef.current.forEach((item) => {
+      if (item?.left) observer.observe(item.left);
+      if (item?.right) observer.observe(item.right);
+    });
     return () => observer.disconnect();
   }, []);
 
   const [timelineActive, setTimelineActive] = useState(false);
   const timelineRef = useRef(null);
-  // Equivalent of timelineIntersecting()
+  //Equivalent of timelineIntersecting()
   useEffect(() => {
     const element = timelineRef.current;
 
@@ -68,6 +70,30 @@ function VoyageSecondSection() {
     })),
   );
 
+  const [boatPosition, setBoatPosition] = useState(50);
+  const [scrollDirection, setScrollDirection] = useState("down");
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    function handleScroll() {
+      const currentScrollY = window.scrollY;
+      const scrollPercent =
+        currentScrollY / (document.body.scrollHeight - window.innerHeight);
+      setBoatPosition(50 + scrollPercent);
+      if (currentScrollY > lastScrollY) {
+        setScrollDirection("down");
+      } else {
+        setScrollDirection("up");
+      }
+      lastScrollY = currentScrollY;
+    }
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <>
       <section className="timeline-section" id="projects">
@@ -78,7 +104,7 @@ function VoyageSecondSection() {
                 <div className="timeline-upper-sub-inner-content">
                   <h2
                     id="my-journey"
-                    className={timelineActive ? "fly-text active" : "fly-text"}
+                    className={`fly-text ${timelineActive ? "active" : ""}`}
                     ref={timelineRef}
                   >
                     {letters.map(({ char, index, style }) => (
@@ -87,34 +113,9 @@ function VoyageSecondSection() {
                       </span>
                     ))}
                   </h2>
-                  <p>
-                    During the great plague, I first set sail into the seas of
-                    Web Development, revisiting the arts of HTML, CSS, and
-                    JavaScript. With plenty of time on my hands, I spent several
-                    months strengthening my understanding of the fundamentals
-                    and charting the beginnings of my journey.
-                  </p>
-                  <p>
-                    As life gradually returned to normal and duties ashore grew
-                    heavier, my studies slowed. Long days of work often left
-                    little energy for further exploration, and my voyage drifted
-                    from its original course
-                  </p>
-                  <p>
-                    Yet about a year ago, the call of a new horizon grew too
-                    strong to ignore. Seeking fresh challenges and a renewed
-                    sense of accomplishment, I committed myself to learning
-                    programming once more. Since then, I have focused on steady
-                    progress, believing that even the smallest step forward each
-                    day brings me closer to my destination.
-                  </p>
-                  <p>
-                    This website serves as my captain's log, a record of the
-                    knowledge I've gathered, the projects I've built, and the
-                    milestones I've reached along the way. It is both a showcase
-                    of my journey and a reminder that every great voyage begins
-                    with a single course set toward the horizon
-                  </p>
+                  {description.map((item, index) => (
+                    <p key={index}>{item.text}</p>
+                  ))}
                 </div>
               </div>
             </div>
@@ -125,1209 +126,150 @@ function VoyageSecondSection() {
             <div className="padding-top"></div>
             <div className="timeline-component">
               <div className="timeline-progress">
-                <div className="timeline-progress-bar">
-                  <div className="voyage-ship">
+                <div className={`timeline-progress-bar ${scrollDirection}`}>
+                  <div
+                    className={`voyage-ship ${scrollDirection}`}
+                    style={{ top: `${boatPosition}vh` }}
+                  >
                     <img
                       src="./images/index/boat.webp"
                       className="boat"
+                      style={{
+                        transform:
+                          scrollDirection === "up"
+                            ? "rotate(180deg)"
+                            : "rotate(0deg)",
+                      }}
                       alt="Voyage Ship"
                     />
                   </div>
                 </div>
               </div>
-              <div className="timeline-item">
+              {timelineContent.map((item, index) => (
                 <div
-                  ref={dateRef}
-                  className={`timeline-left ${isDateSlide ? "dateSlide " : ""}`}
+                  className="timeline-item last-timeline-container"
+                  key={index}
                 >
-                  <div className="timeline-date">
-                    <p className="timeline-date-text">
-                      OCT - NOV 2025
-                      <br />
-                      The Beginning
-                    </p>
-                  </div>
-                </div>
-                <div className="timeline-center"></div>
-                <div
-                  ref={textRef}
-                  className={`timeline-right ${isTimelineText ? "textSlide " : ""}`}
-                >
-                  <div className="margin-bottom">
-                    <div className="timeline-text">
-                      <h3>
-                        <img
-                          src="/images/index/timeline/theme.webp"
-                          alt="theme icon"
-                        />
-                        <span>Single-Page E-commerce Website</span>
-                      </h3>
-                      <div>
-                        <img
-                          src="/images/index/timeline/technologies.webp"
-                          alt="tech icon"
-                          className="tech-icon"
-                        />
-                        <ul>
-                          <li>
-                            <span className="html-tag">HTML</span>
-                          </li>
-                          <li>
-                            <span className="css-tag">CSS</span>
-                          </li>
-                          <li>
-                            <span className="js-tag">JavaScript</span>
-                          </li>
-                        </ul>
-                      </div>
-                      <div className="log-section">
-                        <img
-                          src="/images/index/timeline/captainLog.webp"
-                          alt="log icon"
-                          className="log-icon"
-                        />
-                        <p className="log-text collapsed">
-                          This expedition marked my first attempt at
-                          establishing a merchant vessel upon the digital seas.
-                          Armed with HTML, CSS, and vanilla JavaScript, I set
-                          sail to build a single-page trading post. The voyage
-                          was far from smooth, as I had only recently returned
-                          to studying web development and found myself
-                          relearning the ropes of Flexbox and CSS Grid. To keep
-                          track of the crew's cargo and provisions, I employed
-                          localStorage to manage cart data. Along the way, I
-                          consulted maps and journals from YouTube and other
-                          distant ports. When the charts proved difficult to
-                          interpret, AI acted as a seasoned navigator, helping
-                          me understand the foundations of the ship's design and
-                          the principles behind its construction. Though I can
-                          now spot many signs of an inexperienced sailor in this
-                          vessel, the journey was invaluable. Every storm
-                          weathered and every mistake corrected helped lay the
-                          foundation for the voyages that followed, transforming
-                          uncertainty into experience and curiosity into skill.
-                        </p>
-                        <button className="read-more-btn">Read More</button>
-                      </div>
-                      <div>
-                        <img
-                          src="/images/index/timeline/acquired.webp"
-                          alt="skills icon"
-                          className="skills-icon"
-                        />
-                        <p>
-                          Flexbox, CSS Grid, localStorage, floating navigation,
-                          signup/login functionality, adding/deleting products
-                          in a cart, and calculating the total order price.
-                        </p>
-                      </div>
-                      <div>
-                        <img
-                          src="/images/index/timeline/treasureGain.webp"
-                          alt="challenges icon"
-                          className="challenges-icon"
-                        />
-                        <p>
-                          Implementing responsive design, managing state with
-                          localStorage, passing data between multiple functions,
-                          and implementing the signup/login functionality.
-                        </p>
-                      </div>
-                      <div>
-                        <img
-                          src="/images/index/timeline/weathered.webp"
-                          alt="challenges icon"
-                          className="challenges-icon"
-                        />
-                        <p>
-                          Formidable (I stopped following tutorials and
-                          challenged myself to build the project independently.)
-                        </p>
-                      </div>
-                      <p></p>
+                  <div
+                    ref={(el) => {
+                      timelineContentRef.current[index] = {
+                        ...timelineContentRef.current[index],
+                        trigger: el,
+                      };
+                    }}
+                    data-index={index}
+                    className="timeline-trigger"
+                  />
+                  <div
+                    ref={(el) => {
+                      timelineContentRef.current[index] = {
+                        ...timelineContentRef.current[index],
+                        left: el,
+                      };
+                    }}
+                    className={`timeline-left ${isTimelineSlide[index] ? "dateSlide " : ""}`}
+                    data-index={index}
+                  >
+                    <div className="timeline-date">
+                      <p className="timeline-date-text">
+                        {item.date}
+                        <br />
+                        {item.dateTitle}
+                      </p>
                     </div>
                   </div>
-                  <div className="timeline-image-wrap">
-                    <p>Explore the Island</p>
-                    <a
-                      href="https://nathan-front.github.io/Ecommerce/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="timeline-images"
-                    >
-                      <img
-                        src="/images/index/timeline/first.webp"
-                        alt="hotel opening image"
-                      />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="timeline-component">
-              <div className="timeline-item">
-                <div className="timeline-left">
-                  <div className="timeline-date">
-                    <p>
-                      NOV - DEC 2025
-                      <br />
-                      The Struggle
-                    </p>
-                  </div>
-                </div>
-                <div className="timeline-center"></div>
-                <div className="timeline-right">
-                  <div className="margin-bottom">
-                    <div className="timeline-text">
-                      <h3>
-                        <img
-                          src="/images/index/timeline/theme.webp"
-                          alt="theme icon"
-                        />
-                        <span>Multi-Page Coffee Shop Website</span>
-                      </h3>
-                      <div>
-                        <img
-                          src="/images/index/timeline/technologies.webp"
-                          alt="tech icon"
-                          className="tech-icon"
-                        />
-                        <ul>
-                          <li>
-                            <span className="html-tag">HTML</span>
-                          </li>
-                          <li>
-                            <span className="css-tag">CSS</span>
-                          </li>
-                          <li>
-                            <span className="js-tag">JavaScript</span>
-                          </li>
-                        </ul>
-                      </div>
-                      <div className="log-section">
-                        <img
-                          src="/images/index/timeline/captainLog.webp"
-                          alt="log icon"
-                          className="log-icon"
-                        />
-                        <p className="log-text collapsed">
-                          After successfully establishing my first trading
-                          outpost upon the digital seas, I set my sights on a
-                          far grander expedition, constructing a website that
-                          spanned multiple islands connected by well-charted
-                          routes. Confident from my previous voyage, I believed
-                          I was ready to navigate these larger waters. However,
-                          I quickly discovered that this journey would test my
-                          skills far more than I had anticipated. For this
-                          expedition, I challenged myself to rely less on my
-                          trusted navigator, AI, and instead consult the maps
-                          and lessons gathered from earlier voyages. Despite
-                          this, I encountered many storms along the way,
-                          particularly when attempting to master touch-screen
-                          interactions. As these waters were unfamiliar to me, I
-                          sought guidance from AI to better understand the
-                          mechanics before continuing the journey under my own
-                          command. This voyage taught me how to establish
-                          reliable trade routes between multiple islands by
-                          linking pages together and managing navigation across
-                          the entire archipelago. I also reinforced the ship's
-                          design with responsive construction techniques,
-                          ensuring the vessel could sail smoothly across seas of
-                          all sizes, from small mobile skiffs to large desktop
-                          galleons. While I still consulted experienced
-                          navigators when necessary, I focused far more on
-                          charting my own course, solving problems
-                          independently, and relying less on tutorial maps. This
-                          expedition became a major milestone in my journey as a
-                          web developer, pushing me to strengthen previously
-                          acquired skills while learning to navigate more
-                          complex waters. Though the voyage was filled with
-                          storms and challenges, the treasure gained was
-                          invaluable, leaving me with a deeper understanding of
-                          multi-page website development and a stronger
-                          foundation for the adventures that lay ahead.
-                        </p>
-                        <button className="read-more-btn">Read More</button>
-                      </div>
-                      <div>
-                        <img
-                          src="/images/index/timeline/acquired.webp"
-                          alt="skills icon"
-                          className="skills-icon"
-                        />
-                        <p>
-                          Flexbox, CSS Grid, box-shadow and text-shadow effects,
-                          burger-menu functionality, localStorage, mobile
-                          navigation, image carousel implementation,
-                          touch-screen functionality, signup/login
-                          functionality, adding/deleting products from a cart,
-                          calculating total order prices, and developing a
-                          simple seat reservation system.
-                        </p>
-                      </div>
-                      <div>
-                        <img
-                          src="/images/index/timeline/treasureGain.webp"
-                          alt="challenges icon"
-                          className="challenges-icon"
-                        />
-                        <p>
-                          Implementing responsive design, passing data between
-                          multiple functions, touch-screen functionality,
-                          burger-menu functionality, seat reservation
-                          functionality, carousel implementation, working with
-                          asynchronous fetch requests, and rendering cart data
-                          across multiple pages.
-                        </p>
-                      </div>
-                      <div>
-                        <img
-                          src="/images/index/timeline/weathered.webp"
-                          alt="challenges icon"
-                          className="challenges-icon"
-                        />
-                        <p>
-                          Grueling (The touch-screen functionality was
-                          particularly difficult, and I had to use AI as a
-                          learning resource to understand how to implement it
-                          effectively. The seat reservation too was also a
-                          challenge, as it required managing state and user
-                          interactions in a more complex way than the previous
-                          project.)
-                        </p>
+                  <div className="timeline-center"></div>
+                  <div
+                    ref={(el) => {
+                      timelineContentRef.current[index] = {
+                        ...timelineContentRef.current[index],
+                        right: el,
+                      };
+                    }}
+                    className={`timeline-right ${isTimelineSlide[index] ? "textSlide " : ""}`}
+                    data-index={index}
+                  >
+                    <div className="margin-bottom">
+                      <div className="timeline-text">
+                        <h3>
+                          <img
+                            src="./images/index/timeline/theme.webp"
+                            alt="theme-icon"
+                          />
+                          <span>{item.themeTitle}</span>
+                        </h3>
+                        <div>
+                          <img
+                            src="./images/index/timeline/technologies.webp"
+                            alt="tech-icon"
+                            className="tech-icon"
+                          />
+                          <ul>
+                            {item.tech.map((lang, langIndex) => (
+                              <li key={langIndex}>
+                                <span className={`${Object.values(lang)}-tag`}>
+                                  {Object.values(lang)}
+                                </span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        <div className="log-section">
+                          <img
+                            src="./images/index/timeline/captainLog.webp"
+                            alt="log icon"
+                            className="log-icon"
+                          />
+                          <p className="log-text collapsed">{item.log}</p>
+                          <button className="read-more-btn">Read More</button>
+                        </div>
+                        <div>
+                          <img
+                            src="./images/index/timeline/acquired.webp"
+                            alt="skills icon"
+                            className="skills-icon"
+                          />
+                          <p>{item.acquired}</p>
+                        </div>
+                        <div>
+                          <img
+                            src="./images/index/timeline/treasureGain.webp"
+                            alt="treasure-icon"
+                            className="treasure-icon"
+                          />
+                          <p>{item.treasure}</p>
+                        </div>
+                        <div>
+                          <img
+                            src="./images/index/timeline/weathered.webp"
+                            alt="weathered icon"
+                            className="weathered-icon"
+                          />
+                          <p>{item.weathered}</p>
+                        </div>
+                        <p></p>
                       </div>
                     </div>
-                  </div>
-                  <div className="timeline-image-wrap">
-                    <p>Explore the Island</p>
-                    <a
-                      href="https://nathan-front.github.io/Coffee-webpage/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="timeline-images"
-                    >
-                      <img
-                        src="/images/index/timeline/second.webp"
-                        alt="hotel opening image"
-                      />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="timeline-component">
-              <div className="timeline-item">
-                <div className="timeline-left">
-                  <div className="timeline-date">
-                    <p>
-                      DEC 26th - 31st
-                      <br />
-                      React Introduction
-                    </p>
-                  </div>
-                </div>
-                <div className="timeline-center"></div>
-                <div className="timeline-right">
-                  <div className="margin-bottom">
-                    <div className="timeline-text">
-                      <h3>
+                    <div className="timeline-image-wrap">
+                      <p>{item.explore}</p>
+                      <a
+                        href="https://nathan-front.github.io/Ecommerce/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="timeline-images"
+                      >
                         <img
-                          src="/images/index/timeline/theme.webp"
-                          alt="theme icon"
+                          src="./images/index/timeline/first.webp"
+                          alt="page-link-image"
                         />
-                        <span>Youtube Tutorial of React fundamentals</span>
-                      </h3>
-                      <div>
-                        <img
-                          src="./images/index/timeline/technologies.webp"
-                          alt="tech icon"
-                          className="tech-icon"
-                        />
-                        <ul>
-                          <li>
-                            <span className="react-tag">React</span>
-                          </li>
-                          <li>
-                            <span className="aws-tag">AWS</span>
-                          </li>
-                        </ul>
-                      </div>
-                      <div className="log-section">
-                        <img
-                          src="/images/index/timeline/captainLog.webp"
-                          alt="log icon"
-                          className="log-icon"
-                        />
-                        <p className="log-text collapsed">
-                          After successfully navigating the waters of multi-page
-                          website development, I set sail toward the uncharted
-                          continent of React. Guided by a YouTube navigator's
-                          charts, I learned the fundamentals of components,
-                          state management, and props while exploring unfamiliar
-                          territory. This voyage also marked my first expedition
-                          into AWS deployment. From preparing the vessel with
-                          new tools and packages to launching it beyond my local
-                          harbor, nearly every step presented new challenges.
-                          Though the journey was filled with rough seas and
-                          unfamiliar workflows, it provided valuable insight
-                          into modern web development practices and expanded my
-                          understanding of the technologies used across the
-                          digital seas.
-                        </p>
-                        <button className="read-more-btn">Read More</button>
-                      </div>
-                      <div>
-                        <img
-                          src="/images/index/timeline/acquired.webp"
-                          alt="skills icon"
-                          className="skills-icon"
-                        />
-                        <p>
-                          Setting up a React development environment, deploying
-                          applications to AWS, working with components, managing
-                          state, passing props between components, and
-                          understanding the overall structure and workflow of
-                          React applications.
-                        </p>
-                      </div>
-                      <div>
-                        <img
-                          src="/images/index/timeline/treasureGain.webp"
-                          alt="challenges icon"
-                          className="challenges-icon"
-                        />
-                        <p>
-                          Accustomed to navigating with vanilla JavaScript, I
-                          found React's component-based architecture to be
-                          unfamiliar territory. Learning state management,
-                          passing props between components, and deploying a
-                          React application to AWS presented many challenges,
-                          but the voyage proved worthwhile. The experience
-                          provided a strong foundation in both React and AWS,
-                          and I hope to revisit these waters when embarking on
-                          larger future expeditions.
-                        </p>
-                      </div>
-                      <div>
-                        <img
-                          src="/images/index/timeline/weathered.webp"
-                          alt="challenges icon"
-                          className="challenges-icon"
-                        />
-                        <p>
-                          Treacherous (I initially thought I could complete it
-                          without much difficulty, but I quickly realized I had
-                          underestimated the complexity. I used AI more than
-                          expected and spent a significant amount of time
-                          researching concepts to better understand how React
-                          and AWS work.)
-                        </p>
-                      </div>
+                      </a>
                     </div>
                   </div>
-                  <div className="timeline-image-wrap">
-                    <p>
-                      Explore the Island *I dont have the exact map of the
-                      island so I will just share the youtube course I had
-                      followed.
-                    </p>
-                    <a
-                      href="https://www.youtube.com/watch?v=TtPXvEcE11E&t=12824s"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="timeline-images"
-                    >
-                      <img
-                        src="/images/index/timeline/youtube.webp"
-                        alt="React full course image"
-                      />
-                    </a>
-                  </div>
                 </div>
-              </div>
+              ))}
             </div>
 
-            <div className="timeline-component">
-              <div className="timeline-item">
-                <div className="timeline-left">
-                  <div className="timeline-date">
-                    <p>
-                      JAN - FEB 2026
-                      <br />
-                      The Level Up
-                    </p>
-                  </div>
-                </div>
-                <div className="timeline-center"></div>
-                <div className="timeline-right">
-                  <div className="margin-bottom">
-                    <div className="timeline-text">
-                      <h3>
-                        <img
-                          src="/images/index/timeline/theme.webp"
-                          alt="theme icon"
-                        />
-                        <span>Multi-Page Hotel Website</span>
-                      </h3>
-                      <div>
-                        <img
-                          src="/images/index/timeline/technologies.webp"
-                          alt="tech icon"
-                          className="tech-icon"
-                        />
-                        <ul>
-                          <li>
-                            <span className="html-tag">HTML</span>
-                          </li>
-                          <li>
-                            <span className="css-tag">CSS</span>
-                          </li>
-                          <li>
-                            <span className="js-tag">JavaScript</span>
-                          </li>
-                        </ul>
-                      </div>
-                      <div className="log-section">
-                        <img
-                          src="/images/index/timeline/captainLog.webp"
-                          alt="log icon"
-                          className="log-icon"
-                        />
-                        <p className="log-text collapsed">
-                          This project was a much more formidable challenge than
-                          the Coffee Website I previously charted. I dared
-                          myself to build a sprawling, multi-page Hotel Port
-                          with advanced features and a highly polished
-                          aesthetic. Across the voyage, I focused on sharpening
-                          my layout skills, utilizing Flexbox and CSS Grid to
-                          create a responsive design capable of weathering any
-                          screen size. Compared to the scripting, the true
-                          battle was fought on the design front. Charting the
-                          entire visual template from scratch left me thoroughly
-                          exhausted, but proud of the haul. It was during this
-                          grueling endeavor that I began questioning how digital
-                          strongholds manage online tribute and process coin
-                          transactions. Though I didn't implement a payment
-                          gateway on this particular vessel, it successfully
-                          sparked my interest in plundering those complex
-                          systems in the near future.
-                          <br />
-                          "Edit: just added the payment gateway"
-                        </p>
-                        <button className="read-more-btn">Read More</button>
-                      </div>
-                      <div>
-                        <img
-                          src="/images/index/timeline/acquired.webp"
-                          alt="skills icon"
-                          className="skills-icon"
-                        />
-                        <p>
-                          Timed image carousel, on-click page scroll, show
-                          more/less functionality, date range picker, flip card,
-                          timeline content, and FAQ function.
-                        </p>
-                      </div>
-                      <div>
-                        <img
-                          src="/images/index/timeline/treasureGain.webp"
-                          alt="challenges icon"
-                          className="challenges-icon"
-                        />
-                        <p>
-                          I can honestly say that the design aspect of this
-                          project was more challenging than the scripting.
-                          Coming up with the entire design and template from
-                          scratch was quite difficult, especially since I was
-                          already feeling tired while working on it. I had to
-                          put a lot of thought into the layout, color scheme,
-                          and overall aesthetic of the website to make it
-                          visually appealing.
-                        </p>
-                      </div>
-                      <div>
-                        <img
-                          src="/images/index/timeline/weathered.webp"
-                          alt="challenges icon"
-                          className="challenges-icon"
-                        />
-                        <p>Arduous (The work is 60% CSS here)</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="timeline-image-wrap">
-                    <p>Explore the Island</p>
-                    <a
-                      href="https://nathan-front.github.io/Hotel-booking/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="timeline-images"
-                    >
-                      <img
-                        src="/images/index/timeline/third.webp"
-                        alt="hotel opening image"
-                      />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="timeline-component">
-              <div className="timeline-item">
-                <div className="timeline-left">
-                  <div className="timeline-date">
-                    <p>
-                      FEB - MAR 2026
-                      <br />
-                      The Rendering
-                    </p>
-                  </div>
-                </div>
-                <div className="timeline-center"></div>
-                <div className="timeline-right">
-                  <div className="margin-bottom">
-                    <div className="timeline-text">
-                      <h3>
-                        <img
-                          src="/images/index/timeline/theme.webp"
-                          alt="theme icon"
-                        />
-                        <span>Single-Page E-commerce Website to React</span>
-                      </h3>
-                      <div>
-                        <img
-                          src="/images/index/timeline/technologies.webp"
-                          alt="tech icon"
-                          className="tech-icon"
-                        />
-                        <ul>
-                          <li>
-                            <span className="html-tag">HTML</span>
-                          </li>
-                          <li>
-                            <span className="css-tag">CSS</span>
-                          </li>
-                          <li>
-                            <span className="js-tag">JavaScript</span>
-                          </li>
-                          <li>
-                            <span className="react-tag">React</span>
-                          </li>
-                        </ul>
-                      </div>
-                      <div className="log-section">
-                        <img
-                          src="/images/index/timeline/captainLog.webp"
-                          alt="log icon"
-                          className="log-icon"
-                        />
-                        <p className="log-text collapsed">
-                          After conquering the multi-page hotel website using
-                          vanilla JavaScript, I set my sights on a tougher
-                          bounty: converting my existing fleet of projects into
-                          a React application. This voyage proved much more
-                          complex than the traditional JavaScript route. It
-                          required me to not only port over the same features,
-                          but completely adapt them to fit React's modular,
-                          component-based architecture. To navigate these
-                          unfamiliar waters, I spent a massive amount of time
-                          reviewing tutorials and training maps from seasoned
-                          captains to master application structure and state
-                          management. When faced with uncharted technical
-                          anomalies, I utilized AI as a digital navigator to
-                          help steer me through. Working with React forced me to
-                          break away from my traditional scripting habits. I
-                          learned to stop looking at the code as a single wooden
-                          plank and start thinking in terms of isolated
-                          components, dynamic states, and how the various parts
-                          of the vessel communicate across the sea.
-                        </p>
-                        <button className="read-more-btn">Read More</button>
-                      </div>
-                      <div>
-                        <img
-                          src="/images/index/timeline/acquired.webp"
-                          alt="skills icon"
-                          className="skills-icon"
-                        />
-                        <p>
-                          useState, useEffect, component-based architecture,
-                          lifting state up, passing props between components,
-                          ternary operators for conditional rendering.
-                        </p>
-                      </div>
-                      <div>
-                        <img
-                          src="/images/index/timeline/treasureGain.webp"
-                          alt="challenges icon"
-                          className="challenges-icon"
-                        />
-                        <p>
-                          Components base way of thinking, lifting up state,
-                          installing the kit, and deploying a React project in
-                          Github.
-                        </p>
-                      </div>
-                      <div>
-                        <img
-                          src="/images/index/timeline/weathered.webp"
-                          alt="challenges icon"
-                          className="challenges-icon"
-                        />
-                        <p>
-                          Perilous (I watch and searched more than I work here.
-                          Installing the kit was confusing a lot at the
-                          beginning that I created 4 copies of this project just
-                          trying to properly get the React kit installed and set
-                          up.)
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="timeline-image-wrap">
-                    <p>Explore the Island</p>
-                    <a
-                      href="https://nathan-front.github.io/Ecommerce_react_ver/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="timeline-images"
-                    >
-                      <img
-                        src="/images/index/timeline/fourth.webp"
-                        alt="ecommerce project image"
-                      />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="timeline-component">
-              <div className="timeline-item">
-                <div className="timeline-left">
-                  <div className="timeline-date">
-                    <p>
-                      MAR 2026
-                      <br />
-                      The Confusions
-                    </p>
-                  </div>
-                </div>
-                <div className="timeline-center"></div>
-                <div className="timeline-right">
-                  <div className="margin-bottom">
-                    <div className="timeline-text">
-                      <h3>
-                        <img
-                          src="/images/index/timeline/theme.webp"
-                          alt="theme icon"
-                        />
-                        <span>Multi-Page Coffee Shop Website to React</span>
-                      </h3>
-                      <div>
-                        <img
-                          src="/images/index/timeline/technologies.webp"
-                          alt="tech icon"
-                          className="tech-icon"
-                        />
-                        <ul>
-                          <li>
-                            <span className="html-tag">HTML</span>
-                          </li>
-                          <li>
-                            <span className="css-tag">CSS</span>
-                          </li>
-                          <li>
-                            <span className="js-tag">JavaScript</span>
-                          </li>
-                          <li>
-                            <span className="react-tag">React</span>
-                          </li>
-                        </ul>
-                      </div>
-                      <div className="log-section">
-                        <img
-                          src="/images/index/timeline/captainLog.webp"
-                          alt="log icon"
-                          className="log-icon"
-                        />
-                        <p className="log-text collapsed">
-                          I thought I had a solid grasp of how React functioned
-                          after converting my single-page E-commerce website, so
-                          I confidently took on the challenge of converting a
-                          more complex, multi-page coffee shop platform. I
-                          quickly realized I had underestimated the voyage. This
-                          project was significantly more formidable than the
-                          single-page build, demanding a much tighter grip on
-                          managing state and props across scattered components
-                          and pages. I found myself struggling to effectively
-                          structure the application's architecture and regulate
-                          the flow of data between components. Ultimately, I
-                          spent far more time researching solutions and studying
-                          React documentation than writing the actual script. It
-                          was the most challenging technical storm I had faced
-                          since beginning my web development journey. Deploying
-                          the vessel brought its own set of hurdles. Because the
-                          application utilized multiple routes via
-                          BrowserRouter, learning how to properly configure and
-                          deploy it to GitHub Pages required a completely new
-                          map. Following extensive trial and error—and utilizing
-                          AI as a digital navigator—I successfully guided the
-                          project into port. This endeavor pushed me to deepen
-                          my understanding of React's lifecycle and taught me
-                          how to successfully manage large-scale,
-                          component-based architectures.
-                        </p>
-                        <button className="read-more-btn">Read More</button>
-                      </div>
-                      <div>
-                        <img
-                          src="/images/index/timeline/acquired.webp"
-                          alt="skills icon"
-                          className="skills-icon"
-                        />
-                        <p>
-                          Lifting up state, passing props between components,
-                          BrowserRouter for routing, Github gh-pages for
-                          deployment and useRef hook.
-                        </p>
-                      </div>
-                      <div>
-                        <img
-                          src="/images/index/timeline/treasureGain.webp"
-                          alt="challenges icon"
-                          className="challenges-icon"
-                        />
-                        <p>
-                          Lifting up state, deploying a React project that uses
-                          BrowserRouter, and installing the kit.
-                        </p>
-                      </div>
-                      <div>
-                        <img
-                          src="/images/index/timeline/weathered.webp"
-                          alt="challenges icon"
-                          className="challenges-icon"
-                        />
-                        <p>
-                          Intricate (I relied on AI a lot for this project,
-                          especially when trying to deploy the application to
-                          GitHub Pages and install the required React packages.
-                          I spent a lot of time searching for guides and
-                          tutorials, but many of them either lacked clear
-                          explanations or did not match my specific setup.
-                          Getting everything configured correctly was one of the
-                          most frustrating parts when I was doing this project.)
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="timeline-image-wrap">
-                    <p>Explore the Island</p>
-                    <a
-                      href="https://nathan-front.github.io/Coffee_webpage_react_ver/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="timeline-images"
-                    >
-                      <img
-                        src="/images/index/timeline/fifth.webp"
-                        alt="coffee webpage project image"
-                      />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="timeline-component">
-              <div className="timeline-item">
-                <div className="timeline-left">
-                  <div className="timeline-date">
-                    <p>
-                      MAR - APR 2026
-                      <br />
-                      The Sinking In
-                    </p>
-                  </div>
-                </div>
-                <div className="timeline-center"></div>
-                <div className="timeline-right">
-                  <div className="margin-bottom">
-                    <div className="timeline-text">
-                      <h3>
-                        <img
-                          src="/images/index/timeline/theme.webp"
-                          alt="theme icon"
-                        />
-                        <span>Multi-Page Hotel Website to React</span>
-                      </h3>
-                      <div>
-                        <img
-                          src="/images/index/timeline/technologies.webp"
-                          alt="tech icon"
-                          className="tech-icon"
-                        />
-                        <ul>
-                          <li>
-                            <span className="html-tag">HTML</span>
-                          </li>
-                          <li>
-                            <span className="css-tag">CSS</span>
-                          </li>
-                          <li>
-                            <span className="js-tag">JavaScript</span>
-                          </li>
-                          <li>
-                            <span className="react-tag">React</span>
-                          </li>
-                        </ul>
-                      </div>
-                      <div className="log-section">
-                        <img
-                          src="/images/index/timeline/captainLog.webp"
-                          alt="log icon"
-                          className="log-icon"
-                        />
-                        <p className="log-text collapsed">
-                          It was during this project that React's
-                          component-based philosophy finally clicked for me.
-                          After navigating some initial turbulence with
-                          component architecture in my earlier work, I emerged
-                          with a much stronger understanding of how to
-                          effectively architect applications and regulate state
-                          and props across multiple levels. The voyage wasn't
-                          without its challenges. Lifting state up and managing
-                          the complex flow of data between dependent components
-                          proved to be a formidable task. However, completing
-                          this project significantly boosted my confidence in
-                          working with the framework. The final hurdle arrived
-                          during deployment. Launching the application to GitHub
-                          Pages presented unique challenges that forced me to
-                          pivot and implement a completely different deployment
-                          strategy than my previous builds. Ultimately, this
-                          project gave me a profound appreciation for React,
-                          showing me firsthand the massive advantages of
-                          utilizing a modular, component-based architecture to
-                          build complex, scalable web applications.
-                        </p>
-                        <button className="read-more-btn">Read More</button>
-                      </div>
-                      <div>
-                        <img
-                          src="/images/index/timeline/acquired.webp"
-                          alt="skills icon"
-                          className="skills-icon"
-                        />
-                        <p>
-                          HashRouter for routing, gh-pages for deployment,
-                          separating more components into smaller pieces,
-                          putting content inside a JS file and rendering it
-                          through map function.
-                        </p>
-                      </div>
-                      <div>
-                        <img
-                          src="/images/index/timeline/treasureGain.webp"
-                          alt="challenges icon"
-                          className="challenges-icon"
-                        />
-                        <p>
-                          Deployment when using HashRouter, deploying the file
-                          while it is inside a folder (deploying the folder
-                          itself).
-                        </p>
-                      </div>
-                      <div>
-                        <img
-                          src="/images/index/timeline/weathered.webp"
-                          alt="challenges icon"
-                          className="challenges-icon"
-                        />
-                        <p>
-                          Treacherous (I encountered some issues when trying to
-                          deploy this project on GitHub Pages, especially since
-                          it used HashRouter for routing. And, since the files
-                          was also inside a folder itselt that I had to deploy
-                          the folder instead of the files directly)
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="timeline-image-wrap">
-                    <p>Explore the Island</p>
-                    <a
-                      href="https://nathan-front.github.io/Hotel_booking_react_ver/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="timeline-images"
-                    >
-                      <img
-                        src="/images/index/timeline/sixth.webp"
-                        alt="hotel booking project image"
-                      />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="timeline-component">
-              <div className="timeline-item">
-                <div className="timeline-left">
-                  <div className="timeline-date">
-                    <p>
-                      APR 2026
-                      <br />
-                      The Enjoyment
-                    </p>
-                  </div>
-                </div>
-                <div className="timeline-center"></div>
-                <div className="timeline-right">
-                  <div className="margin-bottom">
-                    <div className="timeline-text">
-                      <h3>
-                        <img
-                          src="/images/index/timeline/theme.webp"
-                          alt="theme icon"
-                        />
-                        <span>Multi-Page Jewelry Website</span>
-                      </h3>
-                      <div>
-                        <img
-                          src="/images/index/timeline/technologies.webp"
-                          alt="tech icon"
-                          className="tech-icon"
-                        />
-                        <ul>
-                          <li>
-                            <span className="html-tag">HTML</span>
-                          </li>
-                          <li>
-                            <span className="css-tag">CSS</span>
-                          </li>
-                          <li>
-                            <span className="js-tag">JavaScript</span>
-                          </li>
-                        </ul>
-                      </div>
-                      <div className="log-section">
-                        <img
-                          src="/images/index/timeline/captainLog.webp"
-                          alt="log icon"
-                          className="log-icon"
-                        />
-                        <p className="log-text collapsed">
-                          Following the completion of my previous React project,
-                          my momentum was so high that I immediately launched
-                          into this new build. While my earlier voyages required
-                          me to design and template every visual element from
-                          scratch, for this project, I utilized AI to map out a
-                          pre-designed template for me to work within. This
-                          approach made the development cycle significantly more
-                          enjoyable, as it relieved the heavy lifting on the
-                          design front and allowed me to focus purely on
-                          engineering features and learning advanced techniques.
-                          Operating with a pre-charted blueprint was a
-                          refreshing change of pace; it granted me the freedom
-                          to experiment with complex functionalities without
-                          being constrained by layout concerns. Consequently, I
-                          was able to maximize my time exploring cutting-edge
-                          development methodologies and learning how to
-                          implement intricate new features.
-                        </p>
-                        <button className="read-more-btn">Read More</button>
-                      </div>
-                      <div>
-                        <img
-                          src="/images/index/timeline/acquired.webp"
-                          alt="skills icon"
-                          className="skills-icon"
-                        />
-                        <p>
-                          fetch function to render a page/content to get Data,
-                          Google sheet as Database and Apps Script to be able to
-                          save data to the Google sheet, Paypal API for payment
-                          system, use of Webp for image format.
-                        </p>
-                      </div>
-                      <div>
-                        <img
-                          src="/images/index/timeline/treasureGain.webp"
-                          alt="challenges icon"
-                          className="challenges-icon"
-                        />
-                        <p>
-                          Connecting the website to a Google sheet and using it
-                          as a database, implementing the Paypal API for the
-                          payment system.
-                        </p>
-                      </div>
-                      <div>
-                        <img
-                          src="/images/index/timeline/weathered.webp"
-                          alt="challenges icon"
-                          className="challenges-icon"
-                        />
-                        <p>
-                          Formidable (The most challenging parts of the project
-                          were connecting the website to Google Sheets and using
-                          it as a database, as well as implementing the PayPal
-                          API for payment processing. Aside from those features,
-                          the project was quite enjoyable and manageable because
-                          I was able to work with a pre-designed template and
-                          focus primarily on development.)
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="timeline-image-wrap">
-                    <p>Explore the Island</p>
-                    <a
-                      href="https://nathan-front.github.io/Jewelry-page/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="timeline-images"
-                    >
-                      <img
-                        src="/images/index/timeline/seventh.webp"
-                        alt="jewelry website project image"
-                      />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="timeline-component">
-              <div className="timeline-item">
-                <div className="timeline-left">
-                  <div className="timeline-date">
-                    <p>
-                      APR -MAY 2026
-                      <br />
-                      The Eagerness
-                    </p>
-                  </div>
-                </div>
-                <div className="timeline-center"></div>
-                <div className="timeline-right">
-                  <div className="margin-bottom">
-                    <div className="timeline-text">
-                      <h3>
-                        <img
-                          src="./images/index/timeline/theme.webp"
-                          alt="theme icon"
-                        />
-                        <span>Multi-Page Jewelry Website to React</span>
-                      </h3>
-                      <div>
-                        <img
-                          src="/images/index/timeline/technologies.webp"
-                          alt="tech icon"
-                          className="tech-icon"
-                        />
-                        <ul>
-                          <li>
-                            <span className="html-tag">HTML</span>
-                          </li>
-                          <li>
-                            <span className="css-tag">CSS</span>
-                          </li>
-                          <li>
-                            <span className="js-tag">JavaScript</span>
-                          </li>
-                          <li>
-                            <span className="react-tag">React</span>
-                          </li>
-                        </ul>
-                      </div>
-                      <div className="log-section">
-                        <img
-                          src="/images/index/timeline/captainLog.webp"
-                          alt="log icon"
-                          className="log-icon"
-                        />
-                        <p className="log-text collapsed">
-                          This was the project I was most enthusiastic about
-                          launching, largely because I had thoroughly enjoyed
-                          developing its previous iteration and was eager to see
-                          how the architecture would evolve within React. This
-                          build allowed me to synthesize everything I had
-                          learned across my prior React projects, marking a
-                          highly rewarding milestone in my development journey.
-                          The development phase was exceptionally smooth;
-                          working with a pre-designed template meant I could
-                          bypass the initial layout constraints and focus my
-                          efforts entirely on feature implementation and
-                          exploring new technical methodologies. Ultimately,
-                          this project provided an excellent opportunity to
-                          solidify my React expertise while successfully
-                          engineering a more complex, multi-page application
-                          with advanced capabilities.&#x1F604;
-                        </p>
-                        <button className="read-more-btn">Read More</button>
-                      </div>
-                      <div>
-                        <img
-                          src="/images/index/timeline/acquired.webp"
-                          alt="skills icon"
-                          className="skills-icon"
-                        />
-                        <p>
-                          intersection observer API, useMemo hook, filter
-                          function, card hover slide text effect.
-                        </p>
-                      </div>
-                      <div>
-                        <img
-                          src="/images/index/timeline/treasureGain.webp"
-                          alt="challenges icon"
-                          className="challenges-icon"
-                        />
-                        <p>
-                          Connecting the website to a Google sheet and
-                          implementing the Paypal API for the payment system.
-                        </p>
-                      </div>
-                      <div>
-                        <img
-                          src="/images/index/timeline/weathered.webp"
-                          alt="challenges icon"
-                          className="challenges-icon"
-                        />
-                        <p>
-                          Monumental (The most exciting projects so far and I
-                          was able to understand more about proper usage for
-                          Flexbox and Grid. Luckily we had Golden Week and I was
-                          able to focus more on this project)
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="timeline-image-wrap">
-                    <p>Explore the Island</p>
-                    <a
-                      href="https://nathan-front.github.io/Jewelry_page_react_ver/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="timeline-images"
-                    >
-                      <img
-                        src="/images/index/timeline/eigth.webp"
-                        alt="jewelry website project image"
-                      />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="timeline-component last-timeline-container">
+            {/* <div className="timeline-component last-timeline-container">
               <div className="timeline-item">
                 <div className="timeline-left">
                   <div className="timeline-date">
@@ -1344,14 +286,14 @@ function VoyageSecondSection() {
                     <div className="timeline-text">
                       <h3>
                         <img
-                          src="/images/index/timeline/theme.webp"
+                          src="./images/index/timeline/theme.webp"
                           alt="theme icon"
                         />
                         <span>Future Projects</span>
                       </h3>
                       <div>
                         <img
-                          src="/images/index/timeline/technologies.webp"
+                          src="./images/index/timeline/technologies.webp"
                           alt="tech icon"
                           className="tech-icon"
                         />
@@ -1359,7 +301,7 @@ function VoyageSecondSection() {
                       </div>
                       <div className="log-section">
                         <img
-                          src="/images/index/timeline/captainLog.webp"
+                          src="./images/index/timeline/captainLog.webp"
                           alt="log icon"
                           className="log-icon"
                         />
@@ -1382,7 +324,7 @@ function VoyageSecondSection() {
                       </div>
                       <div>
                         <img
-                          src="/images/index/timeline/acquired.webp"
+                          src="./images/index/timeline/acquired.webp"
                           alt="skills icon"
                           className="skills-icon"
                         />
@@ -1393,7 +335,7 @@ function VoyageSecondSection() {
                       </div>
                       <div>
                         <img
-                          src="/images/index/timeline/treasureGain.webp"
+                          src="./images/index/timeline/treasureGain.webp"
                           alt="challenges icon"
                           className="challenges-icon"
                         />
@@ -1403,7 +345,7 @@ function VoyageSecondSection() {
                       </div>
                       <div>
                         <img
-                          src="/images/index/timeline/weathered.webp"
+                          src="./images/index/timeline/weathered.webp"
                           alt="challenges icon"
                           className="challenges-icon"
                         />
@@ -1420,14 +362,14 @@ function VoyageSecondSection() {
                       className="timeline-images"
                     >
                       <img
-                        src="/images/index/timeline/future.webp"
+                        src="./images/index/timeline/future.webp"
                         alt="jewelry website project image"
                       />
                     </a>
                   </div>
                 </div>
               </div>
-            </div>
+            </div>*/}
 
             <div className="padding-bottom"></div>
           </div>

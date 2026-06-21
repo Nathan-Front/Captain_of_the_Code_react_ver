@@ -57,13 +57,19 @@
     flex-wrap: wrap;
     justify-content: center;
 }
-#multiline-typewriter span {
-    display: inline;
+.words {
+  white-space: nowrap;
+  display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#multiline-typewriter span span {
     opacity: 0;
 }
 #multiline-typewriter span.revealed {
     opacity: 1;
 }
+
 @keyframes blink {
     50% { opacity: 0; }
 }

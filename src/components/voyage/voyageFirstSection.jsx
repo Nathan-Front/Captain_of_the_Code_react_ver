@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 function VoyageFirstSection() {
   const [isTypeText, setIsTypeText] = useState(0);
-  const sentence = text;
-  const textType = [...sentence];
-
+  const sentence = text.split(" ");
+  const letters = text.split("");
+  let letterIndex = 0;
   useEffect(() => {
     let index = 0;
     const interval = setInterval(() => {
-      if (index < textType.length) {
+      if (index < letters.length) {
         setIsTypeText(index + 1);
         index++;
       } else {
@@ -25,9 +25,20 @@ function VoyageFirstSection() {
           {title}
         </h1>
         <p className="typewriter-text" id="multiline-typewriter">
-          {textType.map((char, index) => (
-            <span key={index} className={index < isTypeText ? "revealed" : ""}>
-              {char === " " ? "\u00A0" : char}
+          {sentence.map((word, wordIndex) => (
+            <span className="word" key={wordIndex}>
+              {word.split("").map((char) => {
+                const currentIndex = letterIndex++;
+                return (
+                  <span
+                    key={currentIndex}
+                    className={currentIndex < isTypeText ? "revealed" : ""}
+                  >
+                    {char}
+                  </span>
+                );
+              })}
+              {"\u00A0"}
             </span>
           ))}
         </p>

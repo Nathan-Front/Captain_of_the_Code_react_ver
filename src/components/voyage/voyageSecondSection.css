@@ -245,6 +245,13 @@
     justify-content: center;
     gap: 1rem;
     z-index: 2;
+    margin-bottom: 30px;
+}
+.timeline-trigger {
+    position: absolute;
+    top: 40%;
+    height: 1px;
+    width: 1px;
 }
 .textSlide{
     transform: translateX(0);
@@ -328,23 +335,23 @@
     padding: 0 3px;
     font-size: clamp(0.7rem, 1vw, 1.2rem);
 }
-.html-tag {
+.HTML-tag {
     background:#fff7ed;
     color:#ea580c;
 }
-.css-tag {
+.CSS-tag {
     background:#eff6ff;
     color:#2563eb;
 }
-.js-tag {
+.JAVASCRIPT-tag {
     background:#fef9c3;
     color:#3a2414;
 }
-.react-tag {
+.REACT-tag {
     background:#fef9c3;
     color:#357100;
 }
-.aws-tag {
+.AWS-tag {
     background:#fef9c3;
     color:#ffffff;
 }
@@ -436,7 +443,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("/images/index/timeline/frameBorder.webp");
+    background-image: url("./images/index/timeline/frameBorder.webp");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     pointer-events: none;

@@ -50,7 +50,7 @@ function Nav() {
               className="close-mobile-nav"
               onClick={() => setMobileNav(false)}
             >
-              <img src="/images/nav/closeButton.webp" alt="close-button" />
+              <img src="./images/nav/closeButton.webp" alt="close-button" />
               Close
             </button>
           </li>

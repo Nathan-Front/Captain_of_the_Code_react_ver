@@ -41,9 +41,10 @@
 .split-reveal {
     text-align: center;
 }
-.about-section> p {
+#multiline-typewriter {
     max-width: 60%;
     text-align: center;
+    margin: 0 auto;
     line-height: 1.7;
     font-weight: 400;
     color:#f4eccf;
@@ -52,11 +53,13 @@
         0 0 5px rgba(255,215,0,.3);
     font-family: 'Merriweather', serif;
     z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 #multiline-typewriter span {
     display: inline;
     opacity: 0;
-    position: relative;
 }
 #multiline-typewriter span.revealed {
     opacity: 1;

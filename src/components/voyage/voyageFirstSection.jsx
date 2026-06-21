@@ -1,23 +1,38 @@
+import { title, text, cotactBtn } from "./data/voyageFirstSection.js";
 import { Link } from "react-router-dom";
-
+import { useState, useEffect } from "react";
 function VoyageFirstSection() {
+  const [isTypeText, setIsTypeText] = useState(0);
+  const sentence = text;
+  const textType = [...sentence];
+
+  useEffect(() => {
+    let index = 0;
+    const interval = setInterval(() => {
+      if (index < textType.length) {
+        setIsTypeText(index + 1);
+        index++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 20);
+    return () => clearInterval(interval);
+  }, []);
   return (
     <>
       <section className="about-section" id="about">
         <h1 className="split-reveal" data-text="Welcome Aboard!">
-          Welcome Aboard!
+          {title}
         </h1>
         <p className="typewriter-text" id="multiline-typewriter">
-          Serving as a Technical Instructor for a Japanese company, I spend my
-          days helping crewmates navigate their learning journeys. Beyond my
-          duties, I have devoted the past year to exploring the ever-changing
-          seas of Web Development, steadily building a strong foundation in
-          modern web technologies. Each new project is another voyage, each
-          challenge another storm to overcome, as I continue my quest to grow
-          into a capable and dependable developer.
+          {textType.map((char, index) => (
+            <span key={index} className={index < isTypeText ? "revealed" : ""}>
+              {char === " " ? "\u00A0" : char}
+            </span>
+          ))}
         </p>
         <Link to="/" className="contact-btn">
-          Contact The Captain
+          {cotactBtn}
         </Link>
         <div className="map">
           <svg

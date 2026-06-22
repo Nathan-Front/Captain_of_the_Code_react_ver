@@ -420,7 +420,7 @@ export const timelineContent = [
     explore: `Explore the Island`,
     exploreImg: `./images/index/timeline/eigth.webp`
     },
-    {date: "JUN 2026", 
+    {date: "MAY - JUN 2026", 
     dateTitle: "The Log", 
     themeTitle: "Personal Portfolio",
     tech: [

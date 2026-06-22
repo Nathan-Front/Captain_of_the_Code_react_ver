@@ -3,14 +3,14 @@ body[data-page="voyage"] {
     background-image: unset;
     width: 100%;
 }
-body[data-page="voyage"]>.footer-section  {
-    background-image: url("./images/footer/moonlight.webp");
+body[data-page="voyage"] .footer-section  {
+    background-image: url("/images/footer/moonlight.webp");
     background-repeat: repeat-y;
     background-size: 100% auto;
     background-position: center;
     position: relative;
 }
-body[data-page="voyage"]>.footer-section::after {
+body[data-page="voyage"] .footer-section::after {
     content: "";
     position: absolute;
     left: 0;

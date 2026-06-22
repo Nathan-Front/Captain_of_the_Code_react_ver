@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import { Fragment } from "react";
 import { description, timelineContent } from "./data/voyageSecondSection.js";
 
 function VoyageSecondSection() {
@@ -20,7 +19,7 @@ function VoyageSecondSection() {
       },
       {
         threshold: isMobile ? 0.05 : 0.2,
-        rootMargin: "100px 0px 300px 0px",
+        rootMargin: "50px 0px 300px 0px",
       },
     );
     timelineContentRef.current.forEach((item) => {
@@ -147,7 +146,7 @@ function VoyageSecondSection() {
               </div>
               {timelineContent.map((item, index) => (
                 <div
-                  className="timeline-item last-timeline-container"
+                  className={`timeline-item ${index == timelineContent.length - 1 ? "last-timeline-container" : ""}`}
                   key={index}
                 >
                   <div

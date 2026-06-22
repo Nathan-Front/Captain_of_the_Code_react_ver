@@ -361,12 +361,7 @@
 .log-text {
     overflow: hidden;
     transition: max-height 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.log-text.collapsed {
     max-height: 4.5rem; 
-}
-.log-text.expanded {
-    max-height: 1000px;
 }
 .read-more-btn {
     position: absolute;
@@ -666,6 +661,7 @@
     }
     .timeline-right{
         grid-area: span 1 / span 1 / span 1 / span 1;
+        margin-bottom: 50px;
     }
     .timeline-date{
         margin-bottom: 24px;

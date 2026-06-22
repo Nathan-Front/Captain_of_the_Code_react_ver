@@ -19,7 +19,7 @@ function VoyageSecondSection() {
       },
       {
         threshold: isMobile ? 0.05 : 0.2,
-        rootMargin: "50px 0px 300px 0px",
+        rootMargin: "100% 0px -100px 0px",
       },
     );
     timelineContentRef.current.forEach((item) => {
@@ -93,6 +93,27 @@ function VoyageSecondSection() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const [readMore, setReadMore] = useState(null);
+  const readMoreRef = useRef([]);
+
+  const readMoreHandler = (index) => {
+    const element = readMoreRef.current[index];
+    if (readMore !== null && readMore !== index) {
+      const readLess = readMoreRef.current[readMore];
+      if (readLess) {
+        readLess.style.maxHeight = "100px";
+      }
+    }
+    if (readMore === index) {
+      element.style.maxHeight = "100px";
+      setReadMore(null);
+    } else {
+      element.style.maxHeight = element.scrollHeight + "px";
+      setReadMore(index);
+    }
+  };
+
   return (
     <>
       <section className="timeline-section" id="projects">
@@ -219,8 +240,22 @@ function VoyageSecondSection() {
                             alt="log icon"
                             className="log-icon"
                           />
-                          <p className="log-text collapsed">{item.log}</p>
-                          <button className="read-more-btn">Read More</button>
+                          <p
+                            ref={(el) => (readMoreRef.current[index] = el)}
+                            className="log-text collapsed"
+                          >
+                            {item.log}
+                          </p>
+                          <button
+                            className={
+                              readMore === index
+                                ? "read-more-btn ON"
+                                : "read-more-btn"
+                            }
+                            onClick={() => readMoreHandler(index)}
+                          >
+                            {readMore === index ? "Read Less" : "Read More"}
+                          </button>
                         </div>
                         <div>
                           <img

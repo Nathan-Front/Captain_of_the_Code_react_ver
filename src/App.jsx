@@ -9,7 +9,7 @@ function AppContent() {
   const location = useLocation();
 
   useEffect(() => {
-    let page = location.pathname.replace("#/", "");
+    let page = location.pathname.replace("/", "");
 
     if (page === "") {
       page = "voyage"; // default first page

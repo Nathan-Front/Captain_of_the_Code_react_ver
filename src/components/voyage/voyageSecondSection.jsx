@@ -34,9 +34,7 @@ function VoyageSecondSection() {
   //Equivalent of timelineIntersecting()
   useEffect(() => {
     const element = timelineRef.current;
-
     if (!element) return;
-
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -49,9 +47,7 @@ function VoyageSecondSection() {
         threshold: 0,
       },
     );
-
     observer.observe(element);
-
     return () => {
       observer.disconnect();
     };
@@ -74,7 +70,6 @@ function VoyageSecondSection() {
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
-
     function handleScroll() {
       const currentScrollY = window.scrollY;
       const scrollPercent =
@@ -96,7 +91,6 @@ function VoyageSecondSection() {
 
   const [readMore, setReadMore] = useState(null);
   const readMoreRef = useRef([]);
-
   const readMoreHandler = (index) => {
     const element = readMoreRef.current[index];
     if (readMore !== null && readMore !== index) {

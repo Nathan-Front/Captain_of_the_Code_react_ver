@@ -57,9 +57,9 @@
     flex-wrap: wrap;
     justify-content: center;
 }
-.words {
-  white-space: nowrap;
-  display: flex;
+.word {
+    white-space: nowrap;
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -175,7 +175,10 @@
     .map {
         display: none;
     }
-    .about-section> p {
+    #multiline-typewriter {
+        max-width: 90%;
+    }
+    .word {
         max-width: 90%;
         line-height: 1.5;
     }

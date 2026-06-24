@@ -34,16 +34,16 @@ body[data-page="voyage"] .footer-section::after {
         background-position-y: 130px;
     }
 }
-body[data-page="profile"] {
+body[data-page="manifest"] {
     background-image:
         linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)),
-        url("./images/cv/background.webp");
+        url("/images/cv/background.webp");
     background-blend-mode:multiply;
    
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
-body[data-page="profile"]>.footer-section  {
+body[data-page="manifest"] .footer-section  {
     background-color: rgba(27, 73, 101, 0.5);
 }
 body[data-page="contact"] {

@@ -55,13 +55,13 @@ function Nav() {
             </button>
           </li>
           <li className="nav-links">
-            <Link to="index.html">
+            <Link to="/">
               <img src="./images/nav/compassLink.webp" alt="anchor Icon" />
               VOYAGE
             </Link>
           </li>
           <li className="nav-links">
-            <Link to="profile.html">
+            <Link to="/manifest">
               <img src="./images/nav/bagLink.webp" alt="bag Icon" />
               MANIFEST
             </Link>

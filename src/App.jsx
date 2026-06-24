@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom";
 import Nav from "./components/navigation/nav.jsx";
 import Foot from "./components/footer/foot.jsx";
 import Voyage from "./components/voyage/voyage.jsx";
+import Manifest from "./components/profile/manifest.jsx";
 function AppContent() {
   const location = useLocation();
 
@@ -26,6 +27,7 @@ function AppContent() {
       <Nav />
       <Routes>
         <Route path="/" element={<Voyage />} />
+        <Route path="/manifest" element={<Manifest />} />
       </Routes>
       <Foot />
     </>

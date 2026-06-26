@@ -139,11 +139,11 @@
 .main-title-container  {
     display: none;
 }
-body[data-page="voyage"]> nav> .main-title-container,
-body[data-page="contact"]> nav> .main-title-container {
+body[data-page="voyage"] nav> .main-title-container,
+body[data-page="contact"] nav> .main-title-container {
     display: none;
 }
-body[data-page="profile"]> nav> .main-title-container {
+body[data-page="manifest"] nav> .main-title-container {
     position: fixed;
     top: 0;
     left: 30%;
@@ -172,11 +172,11 @@ body[data-page="profile"]> nav> .main-title-container {
         filter: drop-shadow(0 5px 6px rgba(0,0,0,.15));
     }
 }
-body[data-page="profile"]> nav> .main-title-container> img {
+body[data-page="manifest"] nav> .main-title-container> img {
     width: clamp(32px, 5vw, 50px);
     height: clamp(32px, 5vw, 50px);
 }
-body[data-page="profile"]> nav> .main-title-container> h2 {
+body[data-page="manifest"] nav> .main-title-container> h2 {
     font-family: "Pirata One", serif;
     font-size: clamp(1.1rem, 2vw, 2rem);
     color: #b08a32;
@@ -346,13 +346,13 @@ body[data-page="profile"]> nav> .main-title-container> h2 {
         );
         overflow-y: hidden;
     }
-    body[data-page="profile"]> nav>.main-title-container  {
+    body[data-page="manifest"] nav>.main-title-container  {
         width: 60%;
         left: 10px;
         top: -5px;
         padding: 1rem;
     }
-    body[data-page="profile"]> nav> .main-title-container> h2 {
+    body[data-page="manifest"] nav> .main-title-container> h2 {
         margin: 13% auto 0 auto;
     }
     .mobile-footer {
@@ -414,7 +414,7 @@ body[data-page="profile"]> nav> .main-title-container> h2 {
     }
 }
 @media (min-width: 1600px) and (max-width: 2560px) {
-    body[data-page="profile"]> nav> .main-title-container {
+    body[data-page="manifest"] nav> .main-title-container {
         width: 30%;
     }
 }

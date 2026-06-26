@@ -9,7 +9,7 @@
 }
 .profile-second-section> div {
     width: 92%;
-    background-image: url("../../images/cv/parchedPaper.webp");
+    background-image: url("/images/cv/parchedPaper.webp");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -216,7 +216,7 @@
     top: -15px;
     left: -39px;
     z-index: 1;
-    background-image: url("../../images/cv/island.webp");
+    background-image: url("/images/cv/island.webp");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
@@ -270,14 +270,14 @@
     max-height: 120px;
     top: 0;
     left: 0;
-    background-image: url("../../images/cv/paperDagger.webp");
+    background-image: url("/images/cv/paperDagger.webp");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
 .details-text-content {
     width: 100%;
-    background-image: url("../../images/cv/paperDaggerHalf.webp");
+    background-image: url("/images/cv/paperDaggerHalf.webp");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -425,7 +425,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: url("../../images/cv/cardParchment.webp");
+    background-image: url("/images/cv/cardParchment.webp");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -441,7 +441,7 @@
     width: 80px;
     height: 120px;
     border-radius: 50%;
-    background-image: url("../../images/cv/anchorDrop.webp");
+    background-image: url("/images/cv/anchorDrop.webp");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -535,12 +535,12 @@
     width: clamp(24px, 2vw, 50px);
     height: clamp(20px, 2vw, 40px);
     display: inline-block;
-    background: url("../../images/cv/scroll.webp") center/contain no-repeat;
+    background: url("/images/cv/scroll.webp") center/contain no-repeat;
     transition: transform 0.3s ease;
     margin-left: 4px;
 }
 .logbook-link:hover .icon {
-    background-image: url("../../images/footer/pirateship.webp");
+    background-image: url("/images/footer/pirateship.webp");
     transform: translateX(4px);
 }
 .logbook-link> span:last-child {
@@ -702,7 +702,7 @@
         margin-left: 3%;
     }
     .explored-islands::after {
-        background-image: url("../../images/cv/location.webp");
+        background-image: url("/images/cv/location.webp");
         bottom: -20px;
         width: 30px;
         height: 30px;

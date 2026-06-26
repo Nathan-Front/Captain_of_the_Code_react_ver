@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom";
 import Nav from "./components/navigation/nav.jsx";
 import Foot from "./components/footer/foot.jsx";
 import Voyage from "./components/voyage/voyage.jsx";
-import Manifest from "./components/profile/manifest.jsx";
+import Manifest from "./components/manifest/manifest.jsx";
 function AppContent() {
   const location = useLocation();
 

@@ -39,6 +39,26 @@ function Nav() {
       document.body.classList.remove("no-scroll");
     };
   }, [mobileNav]);
+
+  const [showTitle, setShowTitle] = useState(false);
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+    const handleTitleScroll = () => {
+      let currentScroll = window.scrollY;
+
+      if (currentScroll > lastScrollY) {
+        setShowTitle(true);
+      } else {
+        setShowTitle(false);
+      }
+      lastScrollY = currentScroll;
+    };
+    window.addEventListener("scroll", handleTitleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleTitleScroll);
+    };
+  }, []);
   return (
     <>
       <nav className={`navbar ${hideNav ? "hide" : ""}`}>
@@ -122,7 +142,13 @@ function Nav() {
           <img src="./images/nav/telescopeLink.webp" alt="mobile-nav" />
           Menu
         </button>
-        <div className="main-title-container">
+        <div
+          className={
+            showTitle
+              ? "main-title-container hideBanner"
+              : "main-title-container"
+          }
+        >
           <h2>CAPTAIN OF THE CODE</h2>
         </div>
         <div className={`overlay ${mobileNav ? "overlayActive" : ""}`}></div>

@@ -122,7 +122,8 @@ function ManifestSecondSection() {
                       rel="noopener noreferrer"
                       className="logbook-link"
                     >
-                      <span className="icon"></span> <span>{island.site}</span>
+                      <span className="icon"></span>{" "}
+                      <span>{island.LinkText}</span>
                     </a>
                     <div className="location-icon">
                       <img src={item.locationImg} alt={item.locationAlt} />

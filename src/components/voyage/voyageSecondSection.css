@@ -437,7 +437,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("./images/index/timeline/frameBorder.webp");
+    background-image: url("/images/index/timeline/frameBorder.webp");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     pointer-events: none;

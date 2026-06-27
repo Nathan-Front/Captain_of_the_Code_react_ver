@@ -7,7 +7,9 @@ function Nav() {
 
   useEffect(() => {
     function handleScroll() {
-      if (mobileNav) return;
+      if (mobileNav) {
+        return;
+      }
       const currentScrollY = window.scrollY;
       if (currentScrollY > lastScrollY.current) {
         setHideNav(true);
@@ -20,7 +22,7 @@ function Nav() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [mobileNav]);
 
   function toggleMobileNav() {
     setMobileNav((prev) => !prev);

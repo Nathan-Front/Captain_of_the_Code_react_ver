@@ -50,7 +50,8 @@ export const timelineContent = [
     weathered: `Formidable (I stopped following tutorials and
                     challenged myself to build the project independently.)`,
     explore: `Explore the Island`,
-    exploreImg: `./images/index/timeline/first.webp`
+    exploreImg: `./images/index/timeline/first.webp`,
+    exploreLink: "https://nathan-front.github.io/Ecommerce/"
     },
     {date: "NOV - DEC 2025", 
     dateTitle: "The Struggle", 
@@ -116,7 +117,8 @@ export const timelineContent = [
                     interactions in a more complex way than the previous
                     project.)`,
     explore: `Explore the Island`,
-    exploreImg: `./images/index/timeline/second.webp`
+    exploreImg: `./images/index/timeline/second.webp`,
+    exploreLink: "https://nathan-front.github.io/Coffee-webpage/"
     },
     {date: "DEC 26th - 31st", 
     dateTitle: "React Introduction", 
@@ -162,7 +164,8 @@ export const timelineContent = [
     explore: `Explore the Island *I dont have the exact map of the
                 island so I will just share the youtube course I had
                 followed.`,
-    exploreImg: `./images/index/timeline/youtube.webp`
+    exploreImg: `./images/index/timeline/youtube.webp`,
+    exploreLink: "https://www.youtube.com/watch?v=TtPXvEcE11E&t=12824s"
     },
     {date: "JAN - FEB 2026", 
     dateTitle: "The Level Up", 
@@ -204,7 +207,8 @@ export const timelineContent = [
                     visually appealing.`,
     weathered: `Arduous (The work is 60% CSS here)`,
     explore: `Explore the Island`,
-    exploreImg: `./images/index/timeline/third.webp`
+    exploreImg: `./images/index/timeline/third.webp`,
+    exploreLink: "https://nathan-front.github.io/Hotel-booking/"
     },
     {date: "FEB - MAR 2026", 
     dateTitle: "The Rendering", 
@@ -246,7 +250,8 @@ export const timelineContent = [
                     trying to properly get the React kit installed and set
                     up.)`,
     explore: `Explore the Island`,
-    exploreImg: `./images/index/timeline/fourth.webp`
+    exploreImg: `./images/index/timeline/fourth.webp`,
+    exploreLink: "https://nathan-front.github.io/Ecommerce_react_ver/"
     },
     {date: "MAR 2026", 
     dateTitle: "The Confusions", 
@@ -296,7 +301,8 @@ export const timelineContent = [
                     Getting everything configured correctly was one of the
                     most frustrating parts when I was doing this project.)`,
     explore: `Explore the Island`,
-    exploreImg: `./images/index/timeline/fifth.webp`
+    exploreImg: `./images/index/timeline/fifth.webp`,
+    exploreLink: "https://nathan-front.github.io/Coffee_webpage_react_ver/"
     },
     {date: "MAR - APR 2026", 
     dateTitle: "The Sinking In", 
@@ -340,7 +346,8 @@ export const timelineContent = [
                     was also inside a folder itselt that I had to deploy
                     the folder instead of the files directly)`,
     explore: `Explore the Island`,
-    exploreImg: `./images/index/timeline/sixth.webp`
+    exploreImg: `./images/index/timeline/sixth.webp`,
+    exploreLink: "https://nathan-front.github.io/Hotel_booking_react_ver/"
     },
     {date: "APR 2026", 
     dateTitle: "The Enjoyment", 
@@ -382,7 +389,8 @@ export const timelineContent = [
                     I was able to work with a pre-designed template and
                     focus primarily on development.)`,
     explore: `Explore the Island`,
-    exploreImg: `./images/index/timeline/seventh.webp`
+    exploreImg: `./images/index/timeline/seventh.webp`,
+    exploreLink: "https://nathan-front.github.io/Jewelry-page/"
     },
     {date: "APR -MAY 2026", 
     dateTitle: "The Eagerness", 
@@ -418,7 +426,8 @@ export const timelineContent = [
                     Flexbox and Grid. Luckily we had Golden Week and I was
                     able to focus more on this project)`,
     explore: `Explore the Island`,
-    exploreImg: `./images/index/timeline/eigth.webp`
+    exploreImg: `./images/index/timeline/eigth.webp`,
+    exploreLink: "https://nathan-front.github.io/Jewelry_page_react_ver/"
     },
     {date: "MAY - JUN 2026", 
     dateTitle: "The Log", 
@@ -455,7 +464,8 @@ export const timelineContent = [
                     more on CSS and editing of images which is about CSS 40% and image editing
                     40%)`,
     explore: `Explore the Island`,
-    exploreImg: `./images/index/timeline/portfolio.webp`
+    exploreImg: `./images/index/timeline/portfolio.webp`,
+    exploreLink: "https://nathan-front.github.io/Portfolio/"
     },
     {date: "Future", 
     dateTitle: "The Next", 
@@ -481,6 +491,7 @@ export const timelineContent = [
     treasure: `Maintaining consistency while working a full-time job.`,
     weathered: `Having an impostor syndrome all the time.`,
     explore: `Explore the Island`,
-    exploreImg: `./images/index/timeline/future.webp`
+    exploreImg: `./images/index/timeline/future.webp`,
+    exploreLink: ""
     },
 ]

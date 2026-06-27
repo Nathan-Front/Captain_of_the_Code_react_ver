@@ -281,124 +281,18 @@ function VoyageSecondSection() {
                     <div className="timeline-image-wrap">
                       <p>{item.explore}</p>
                       <a
-                        href="https://nathan-front.github.io/Ecommerce/"
+                        href={item.exploreLink}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="timeline-images"
                       >
-                        <img
-                          src="./images/index/timeline/first.webp"
-                          alt="page-link-image"
-                        />
+                        <img src={item.exploreImg} alt="page-link-image" />
                       </a>
                     </div>
                   </div>
                 </div>
               ))}
             </div>
-
-            {/* <div className="timeline-component last-timeline-container">
-              <div className="timeline-item">
-                <div className="timeline-left">
-                  <div className="timeline-date">
-                    <p>
-                      Future
-                      <br />
-                      The Next
-                    </p>
-                  </div>
-                </div>
-                <div className="timeline-center"></div>
-                <div className="timeline-right">
-                  <div className="margin-bottom">
-                    <div className="timeline-text">
-                      <h3>
-                        <img
-                          src="./images/index/timeline/theme.webp"
-                          alt="theme icon"
-                        />
-                        <span>Future Projects</span>
-                      </h3>
-                      <div>
-                        <img
-                          src="./images/index/timeline/technologies.webp"
-                          alt="tech icon"
-                          className="tech-icon"
-                        />
-                        <span className="unknown-tag">Unknown</span>
-                      </div>
-                      <div className="log-section">
-                        <img
-                          src="./images/index/timeline/captainLog.webp"
-                          alt="log icon"
-                          className="log-icon"
-                        />
-                        <p className="log-text collapsed">
-                          I am currently seeking Junior Frontend Developer
-                          positions where I can deploy my skills, join a crew,
-                          and continue growing as a professional. I plan to keep
-                          upgrading this portfolio vault, though I may keep
-                          future proprietary projects under lock and key once I
-                          officially enter the web development industry. My
-                          ultimate horizon stretches further: I am planning to
-                          conquer backend development and transition into a Full
-                          Stack Developer. To achieve this, I will be setting
-                          sail toward backend-related projects just as soon as I
-                          have fully mastered the intricacies of the frontend
-                          workflow. This is not a final anchor drop, but rather
-                          a 'see you on the next horizon.'
-                        </p>
-                        <button className="read-more-btn">Read More</button>
-                      </div>
-                      <div>
-                        <img
-                          src="./images/index/timeline/acquired.webp"
-                          alt="skills icon"
-                          className="skills-icon"
-                        />
-                        <p>
-                          Staying consistent with studying, even when tired,
-                          even if it is only for an hour each day.
-                        </p>
-                      </div>
-                      <div>
-                        <img
-                          src="./images/index/timeline/treasureGain.webp"
-                          alt="challenges icon"
-                          className="challenges-icon"
-                        />
-                        <p>
-                          Maintaining consistency while working a full-time job.
-                        </p>
-                      </div>
-                      <div>
-                        <img
-                          src="./images/index/timeline/weathered.webp"
-                          alt="challenges icon"
-                          className="challenges-icon"
-                        />
-                        <p>Having an impostor syndrome all the time.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="timeline-image-wrap">
-                    <p>Explore the Island</p>
-                    <a
-                      href="#"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="timeline-images"
-                    >
-                      <img
-                        src="./images/index/timeline/future.webp"
-                        alt="jewelry website project image"
-                      />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>*/}
-
             <div className="padding-bottom"></div>
           </div>
         </div>

@@ -6,6 +6,7 @@ import Nav from "./components/navigation/nav.jsx";
 import Foot from "./components/footer/foot.jsx";
 import Voyage from "./components/voyage/voyage.jsx";
 import Manifest from "./components/manifest/manifest.jsx";
+import DropAnchor from "./components/contact/dropAnchor.jsx";
 function AppContent() {
   const location = useLocation();
 
@@ -28,6 +29,7 @@ function AppContent() {
       <Routes>
         <Route path="/" element={<Voyage />} />
         <Route path="/manifest" element={<Manifest />} />
+        <Route path="/dropAnchor" element={<DropAnchor />} />
       </Routes>
       <Foot />
     </>

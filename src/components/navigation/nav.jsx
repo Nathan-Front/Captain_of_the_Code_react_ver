@@ -87,7 +87,7 @@ function Nav() {
             </Link>
           </li>
           <li className="nav-links">
-            <Link to="contact.html">
+            <Link to="/dropAnchor">
               <img src="./images/nav/anchorLink.webp" alt="anchor Icon" />
               DROP ANCHOR
             </Link>

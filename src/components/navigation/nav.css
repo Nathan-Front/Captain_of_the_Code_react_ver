@@ -139,8 +139,8 @@
 .main-title-container  {
     display: none;
 }
-body[data-page="voyage"] nav> .main-title-container,
-body[data-page="contact"] nav> .main-title-container {
+body[data-page="voyage"] nav .main-title-container,
+body[data-page="dropAnchor"] nav> .main-title-container {
     display: none;
 }
 body[data-page="manifest"] nav> .main-title-container {

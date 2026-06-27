@@ -46,11 +46,11 @@ body[data-page="manifest"] {
 body[data-page="manifest"] .footer-section  {
     background-color: rgba(27, 73, 101, 0.5);
 }
-body[data-page="contact"] {
-    background-image: url("./images/contact/contact.webp");
+body[data-page="dropAnchor"] {
+    background-image: url("/images/contact/contact.webp");
     margin-top: 100px;
 }
-body[data-page="contact"]>.footer-section {
+body[data-page="dropAnchor"] .footer-section {
     background-color: rgba(27, 73, 101, 0.5);
 }
 html {
@@ -74,7 +74,7 @@ body {
     body[data-page="profile"] {
         background-image: url("./images/cv/mobileBackground.webp");
     }
-    body[data-page="contact"] {
+    body[data-page="dropAnchor"] {
         background-image: url("./images/cv/mobileBackground.webp");
 
     }

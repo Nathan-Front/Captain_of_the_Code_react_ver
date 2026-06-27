@@ -72,14 +72,14 @@ body {
 }
 @media only screen and (max-width: 640px) {
     body[data-page="profile"] {
-        background-image: url("./images/cv/mobileBackground.webp");
+        background-image: url("/images/cv/mobileBackground.webp");
     }
     body[data-page="dropAnchor"] {
-        background-image: url("./images/cv/mobileBackground.webp");
+        background-image: url("/images/cv/mobileBackground.webp");
 
     }
     body {
-        background-image: url("./images/cv/mobileBackground.webp");
+        background-image: url("/images/cv/mobileBackground.webp");
     }
     html.no-scroll,
     body.no-scroll {

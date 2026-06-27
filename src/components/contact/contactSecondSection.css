@@ -105,11 +105,12 @@ textarea::placeholder {
 }
 .send-button:disabled {
     cursor: wait;
+    animation: none;
 }
 .spinner {
     display: none;
 }
-.spinner.activeSpinner {
+.activeSpinner {
     display: block;
     position: absolute;
     top: 50%;

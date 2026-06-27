@@ -75,19 +75,19 @@ function Nav() {
             </button>
           </li>
           <li className="nav-links">
-            <Link to="/">
+            <Link to="/" onClick={() => setMobileNav(false)}>
               <img src="./images/nav/compassLink.webp" alt="anchor Icon" />
               VOYAGE
             </Link>
           </li>
           <li className="nav-links">
-            <Link to="/manifest">
+            <Link to="/manifest" onClick={() => setMobileNav(false)}>
               <img src="./images/nav/bagLink.webp" alt="bag Icon" />
               MANIFEST
             </Link>
           </li>
           <li className="nav-links">
-            <Link to="/dropAnchor">
+            <Link to="/dropAnchor" onClick={() => setMobileNav(false)}>
               <img src="./images/nav/anchorLink.webp" alt="anchor Icon" />
               DROP ANCHOR
             </Link>

@@ -22,7 +22,7 @@ export const timelineContent = [
         {css: "CSS"},
         {javascript: "JAVASCRIPT"}
     ],
-    log: `his expedition marked my first attempt at
+    log: `This expedition marked my first attempt at
             establishing a merchant vessel upon the digital seas.
             Armed with HTML, CSS, and vanilla JavaScript, I set
             sail to build a single-page trading post. The voyage
@@ -48,7 +48,7 @@ export const timelineContent = [
                     localStorage, passing data between multiple functions,
                     and implementing the signup/login functionality.`,
     weathered: `Formidable (I stopped following tutorials and
-                    challenged myself to build the project independently.)`,
+                    challenged myself to build the project independently what I was thinking but I guess we still had to looked into references a lot.)`,
     explore: `Explore the Island`,
     exploreImg: `./images/index/timeline/first.webp`,
     exploreLink: "https://nathan-front.github.io/Ecommerce/"
@@ -192,7 +192,7 @@ export const timelineContent = [
             gateway on this particular vessel, it successfully
             sparked my interest in plundering those complex
             systems in the near future. 
-            <br />
+            
             "Edit: just added the payment gateway"`,
     acquired: `Timed image carousel, on-click page scroll, show
                 more/less functionality, date range picker, flip card,
@@ -374,7 +374,7 @@ export const timelineContent = [
             was able to maximize my time exploring cutting-edge
             development methodologies and learning how to
             implement intricate new features.`,
-    acquired: `fetch function to render a page/content to get Data,
+    acquired: `Fetch function to render a page/content to get Data,
                 Google sheet as Database and Apps Script to be able to
                 save data to the Google sheet, Paypal API for payment
                 system, use of Webp for image format.`,
@@ -401,23 +401,18 @@ export const timelineContent = [
         {javascript: "JAVASCRIPT"},
         {react: "REACT"}
     ],
-    log: `This was the project I was most enthusiastic about
-            launching, largely because I had thoroughly enjoyed
-            developing its previous iteration and was eager to see
-            how the architecture would evolve within React. This
-            build allowed me to synthesize everything I had
-            learned across my prior React projects, marking a
-            highly rewarding milestone in my development journey.
-            The development phase was exceptionally smooth;
-            working with a pre-designed template meant I could
-            bypass the initial layout constraints and focus my
-            efforts entirely on feature implementation and
-            exploring new technical methodologies. Ultimately,
-            this project provided an excellent opportunity to
-            solidify my React expertise while successfully
-            engineering a more complex, multi-page application
-            with advanced capabilities.&#x1F604;`,
-    acquired: `intersection observer API, useMemo hook, filter
+    log: `This be the voyage I was most eager to set sail upon, for I had greatly 
+            enjoyed crafting the previous vessel and was eager to discover how its 
+            structure would evolve upon the React seas. This build allowed me to gather 
+            all the treasures I had collected from my past React expeditions, marking a 
+            grand milestone in my journey as a developer.
+            The crafting of this vessel went smoother than a calm tide; with a pre-made 
+            ship design as my map, I could steer clear of the early struggles of layout 
+            and focus my efforts on adding new features and uncovering fresh techniques.
+            In the end, this adventure became a valuable treasure chest of experience, 
+            strengthening my React skills while allowing me to build a more powerful 
+            multi-island application filled with advanced capabilities.`,
+    acquired: `Intersection observer API, useMemo hook, filter
                 function, card hover slide text effect.`,
     treasure: `Connecting the website to a Google sheet and
                     implementing the Paypal API for the payment system.`,
@@ -458,14 +453,46 @@ export const timelineContent = [
                 typing- effect for letters`,
     treasure: `Doing the filter effect in css since I was doing it separately at first,
                     animation effect in CSS since it it my first time doing it. For the CSS, I
-                    consulted AI a lot to know how to do it. Editing of images was too was a
-                    struggle.`,
+                    consulted AI a lot to know how to do it. Editing of images too was a
+                    struggle. Implementation of sending email using EmailJS API.`,
     weathered: `Arduous (since there are only few javascript on the project, the work is
                     more on CSS and editing of images which is about CSS 40% and image editing
                     40%)`,
     explore: `Explore the Island`,
     exploreImg: `./images/index/timeline/portfolio.webp`,
     exploreLink: "https://nathan-front.github.io/Portfolio/"
+    },
+     {date: "JUN 2026", 
+    dateTitle: "The Manifestation", 
+    themeTitle: "Personal Portfolio to React",
+    tech: [
+        {html: "HTML"},
+        {css: "CSS"},
+        {javascript: "JAVASCRIPT"},
+        {react: "REACT"}
+    ],
+    log: `With the desire to forge a React version of my portfolio ship and prepare 
+    it as a treasure worthy of my CV, I immediately set sail to rebuild this vessel 
+    and discover how it would perform upon the React seas.
+        However, a month had passed since my last voyage through React waters, and 
+        my previous vanilla JavaScript ship had taken a long journey to complete 
+        due to the many image treasures I had to craft and polish. When I finally 
+        installed the React Kit, my mind felt like a foggy sea with no compass to 
+        guide me. I had lost my sense of direction and could not remember which course to chart first.
+        So I summoned my trusty AI companion once again to help awaken the crew and 
+        restore our way of thinking. It took two days of sailing before we found 
+        our rhythm and returned to the component-based waters of React.
+        After that, the voyage became smoother, though we still faced storms along 
+        the way, from adjusting the ship's design to repairing the code beneath its deck. 
+        Some of the CSS needed reforging since this vessel sailed with a single index.html 
+        map compared to the old vanilla ship.
+        Even the EmailJS treasure chest needed a few locks adjusted, as the sending of form messages required some extra tuning before it could function properly. In the end, the ship continued forward, stronger and better prepared for the adventures ahead.`,
+    acquired: `AppContent rendering tecnique, backdrop page loader React version, EmailJS implementation React version`,
+    treasure: `Proper setup of EmailJS in React, background image depending to what page is opened. Letter-typing effect in React`,
+    weathered: `Tricksy (I had to change/adjust some of the code to just make it look or atleast the same from its previous version.)`,
+    explore: `Explore the Island`,
+    exploreImg: `./images/index/timeline/portfolio.webp`,
+    exploreLink: ""
     },
     {date: "Future", 
     dateTitle: "The Next", 

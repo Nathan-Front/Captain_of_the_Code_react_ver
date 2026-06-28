@@ -128,6 +128,7 @@
     height: 3px;
     background-color:#d4af37;
     transition: width 0.3s ease;
+    border-radius: 0.25rem;
 }
 .nav-links> a:hover::after {
     width: 100%;  

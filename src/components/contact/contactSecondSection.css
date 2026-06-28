@@ -229,7 +229,7 @@ textarea::placeholder {
     .contact-right-container {
         padding: 2rem 0;
     }
-    .contact-right-container-title> h3 {
+    .contact-right-container-title> h2 {
         margin: 10% 0 0 18%;
     }
     .contact-right-container> ul> li> img {
@@ -255,7 +255,7 @@ textarea::placeholder {
     .contact-right-container {
         margin-top: 2rem;
     }
-    .contact-right-container-title> h3 {
+    .contact-right-container-title> h2 {
         margin: 10% 0 0 18%;
     }
     .contact-right-container {

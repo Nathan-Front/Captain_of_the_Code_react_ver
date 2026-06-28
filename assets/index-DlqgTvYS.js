@@ -12,7 +12,7 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
           C750 0, 650 200, 500 120\r
           C350 40, 300 250, 150 150\r
           C80 100, 50 50, 20 100\r
-          `}),(0,P.jsxs)(`g`,{className:`treasure-x`,transform:`translate(20 100)`,children:[(0,P.jsx)(`line`,{x1:`-6`,y1:`-6`,x2:`6`,y2:`6`}),(0,P.jsx)(`line`,{x1:`-6`,y1:`6`,x2:`6`,y2:`-6`})]}),(0,P.jsxs)(`image`,{href:`./images/footer/pirateship.webp`,x:`-20`,y:`-15`,width:`30`,height:`15`,transform:`scale(2,1)`,className:`ship`,children:[(0,P.jsx)(`animateMotion`,{dur:`30s`,repeatCount:`indefinite`,rotate:`auto-reverse`,children:(0,P.jsx)(`mpath`,{href:`#route`})}),(0,P.jsx)(`animate`,{attributeName:`opacity`,values:`1;1;0.2`,keyTimes:`0;0.7;1`,dur:`30s`,repeatCount:`indefinite`})]})]})})]})})}var cr=[{text:`During the great plague, I first set sail into the seas of Web Development, revisiting the arts of HTML, CSS, and JavaScript. With plenty of time on my hands, I spent several months strengthening my understanding of the fundamentals and charting the beginnings of my journey.`},{text:`As life gradually returned to normal and duties ashore grew heavier, my studies slowed. Long days of work often left little energy for further exploration, and my voyage drifted from its original course.`},{text:`Yet about a year ago, the call of a new horizon grew too strong to ignore. Seeking fresh challenges and a renewed sense of accomplishment, I committed myself to learning programming once more. Since then, I have focused on steady progress, believing that even the smallest step forward each day brings me closer to my destination.`},{text:`This website serves as my captain's log, a record of the knowledge I've gathered, the projects I've built, and the milestones I've reached along the way. It is both a showcase of my journey and a reminder that every great voyage begins with a single course set toward the horizon.`}],lr=[{date:`OCT - NOV 2025`,dateTitle:`The Beginning`,themeTitle:`Single-Page E-commerce Website`,tech:[{html:`HTML`},{css:`CSS`},{javascript:`JAVASCRIPT`}],log:`his expedition marked my first attempt at
+          `}),(0,P.jsxs)(`g`,{className:`treasure-x`,transform:`translate(20 100)`,children:[(0,P.jsx)(`line`,{x1:`-6`,y1:`-6`,x2:`6`,y2:`6`}),(0,P.jsx)(`line`,{x1:`-6`,y1:`6`,x2:`6`,y2:`-6`})]}),(0,P.jsxs)(`image`,{href:`./images/footer/pirateship.webp`,x:`-20`,y:`-15`,width:`30`,height:`15`,transform:`scale(2,1)`,className:`ship`,children:[(0,P.jsx)(`animateMotion`,{dur:`30s`,repeatCount:`indefinite`,rotate:`auto-reverse`,children:(0,P.jsx)(`mpath`,{href:`#route`})}),(0,P.jsx)(`animate`,{attributeName:`opacity`,values:`1;1;0.2`,keyTimes:`0;0.7;1`,dur:`30s`,repeatCount:`indefinite`})]})]})})]})})}var cr=[{text:`During the great plague, I first set sail into the seas of Web Development, revisiting the arts of HTML, CSS, and JavaScript. With plenty of time on my hands, I spent several months strengthening my understanding of the fundamentals and charting the beginnings of my journey.`},{text:`As life gradually returned to normal and duties ashore grew heavier, my studies slowed. Long days of work often left little energy for further exploration, and my voyage drifted from its original course.`},{text:`Yet about a year ago, the call of a new horizon grew too strong to ignore. Seeking fresh challenges and a renewed sense of accomplishment, I committed myself to learning programming once more. Since then, I have focused on steady progress, believing that even the smallest step forward each day brings me closer to my destination.`},{text:`This website serves as my captain's log, a record of the knowledge I've gathered, the projects I've built, and the milestones I've reached along the way. It is both a showcase of my journey and a reminder that every great voyage begins with a single course set toward the horizon.`}],lr=[{date:`OCT - NOV 2025`,dateTitle:`The Beginning`,themeTitle:`Single-Page E-commerce Website`,tech:[{html:`HTML`},{css:`CSS`},{javascript:`JAVASCRIPT`}],log:`This expedition marked my first attempt at
             establishing a merchant vessel upon the digital seas.
             Armed with HTML, CSS, and vanilla JavaScript, I set
             sail to build a single-page trading post. The voyage
@@ -35,7 +35,7 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
                 in a cart, and calculating the total order price.`,treasure:`Implementing responsive design, managing state with
                     localStorage, passing data between multiple functions,
                     and implementing the signup/login functionality.`,weathered:`Formidable (I stopped following tutorials and
-                    challenged myself to build the project independently.)`,explore:`Explore the Island`,exploreImg:`./images/index/timeline/first.webp`,exploreLink:`https://nathan-front.github.io/Ecommerce/`},{date:`NOV - DEC 2025`,dateTitle:`The Struggle`,themeTitle:`Multi-Page Coffee Shop Website`,tech:[{html:`HTML`},{css:`CSS`},{javascript:`JAVASCRIPT`}],log:`After successfully establishing my first trading
+                    challenged myself to build the project independently what I was thinking but I guess we still had to looked into references a lot.)`,explore:`Explore the Island`,exploreImg:`./images/index/timeline/first.webp`,exploreLink:`https://nathan-front.github.io/Ecommerce/`},{date:`NOV - DEC 2025`,dateTitle:`The Struggle`,themeTitle:`Multi-Page Coffee Shop Website`,tech:[{html:`HTML`},{css:`CSS`},{javascript:`JAVASCRIPT`}],log:`After successfully establishing my first trading
             outpost upon the digital seas, I set my sights on a
             far grander expedition, constructing a website that
             spanned multiple islands connected by well-charted
@@ -135,7 +135,7 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
             gateway on this particular vessel, it successfully
             sparked my interest in plundering those complex
             systems in the near future. 
-            <br />
+            
             "Edit: just added the payment gateway"`,acquired:`Timed image carousel, on-click page scroll, show
                 more/less functionality, date range picker, flip card,
                 timeline content, and FAQ function.`,treasure:`I can honestly say that the design aspect of this
@@ -249,7 +249,7 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
             being constrained by layout concerns. Consequently, I
             was able to maximize my time exploring cutting-edge
             development methodologies and learning how to
-            implement intricate new features.`,acquired:`fetch function to render a page/content to get Data,
+            implement intricate new features.`,acquired:`Fetch function to render a page/content to get Data,
                 Google sheet as Database and Apps Script to be able to
                 save data to the Google sheet, Paypal API for payment
                 system, use of Webp for image format.`,treasure:`Connecting the website to a Google sheet and using it
@@ -260,22 +260,17 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
                     API for payment processing. Aside from those features,
                     the project was quite enjoyable and manageable because
                     I was able to work with a pre-designed template and
-                    focus primarily on development.)`,explore:`Explore the Island`,exploreImg:`./images/index/timeline/seventh.webp`,exploreLink:`https://nathan-front.github.io/Jewelry-page/`},{date:`APR -MAY 2026`,dateTitle:`The Eagerness`,themeTitle:`Multi-Page Jewelry Website to React`,tech:[{html:`HTML`},{css:`CSS`},{javascript:`JAVASCRIPT`},{react:`REACT`}],log:`This was the project I was most enthusiastic about
-            launching, largely because I had thoroughly enjoyed
-            developing its previous iteration and was eager to see
-            how the architecture would evolve within React. This
-            build allowed me to synthesize everything I had
-            learned across my prior React projects, marking a
-            highly rewarding milestone in my development journey.
-            The development phase was exceptionally smooth;
-            working with a pre-designed template meant I could
-            bypass the initial layout constraints and focus my
-            efforts entirely on feature implementation and
-            exploring new technical methodologies. Ultimately,
-            this project provided an excellent opportunity to
-            solidify my React expertise while successfully
-            engineering a more complex, multi-page application
-            with advanced capabilities.&#x1F604;`,acquired:`intersection observer API, useMemo hook, filter
+                    focus primarily on development.)`,explore:`Explore the Island`,exploreImg:`./images/index/timeline/seventh.webp`,exploreLink:`https://nathan-front.github.io/Jewelry-page/`},{date:`APR -MAY 2026`,dateTitle:`The Eagerness`,themeTitle:`Multi-Page Jewelry Website to React`,tech:[{html:`HTML`},{css:`CSS`},{javascript:`JAVASCRIPT`},{react:`REACT`}],log:`This be the voyage I was most eager to set sail upon, for I had greatly 
+            enjoyed crafting the previous vessel and was eager to discover how its 
+            structure would evolve upon the React seas. This build allowed me to gather 
+            all the treasures I had collected from my past React expeditions, marking a 
+            grand milestone in my journey as a developer.
+            The crafting of this vessel went smoother than a calm tide; with a pre-made 
+            ship design as my map, I could steer clear of the early struggles of layout 
+            and focus my efforts on adding new features and uncovering fresh techniques.
+            In the end, this adventure became a valuable treasure chest of experience, 
+            strengthening my React skills while allowing me to build a more powerful 
+            multi-island application filled with advanced capabilities.`,acquired:`Intersection observer API, useMemo hook, filter
                 function, card hover slide text effect.`,treasure:`Connecting the website to a Google sheet and
                     implementing the Paypal API for the payment system.`,weathered:`Monumental (The most exciting projects so far and I
                     was able to understand more about proper usage for
@@ -299,10 +294,25 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
                 component in Fetch, split-reveal effect, intersectionObserver in Vanilla JS,
                 typing- effect for letters`,treasure:`Doing the filter effect in css since I was doing it separately at first,
                     animation effect in CSS since it it my first time doing it. For the CSS, I
-                    consulted AI a lot to know how to do it. Editing of images was too was a
-                    struggle.`,weathered:`Arduous (since there are only few javascript on the project, the work is
+                    consulted AI a lot to know how to do it. Editing of images too was a
+                    struggle. Implementation of sending email using EmailJS API.`,weathered:`Arduous (since there are only few javascript on the project, the work is
                     more on CSS and editing of images which is about CSS 40% and image editing
-                    40%)`,explore:`Explore the Island`,exploreImg:`./images/index/timeline/portfolio.webp`,exploreLink:`https://nathan-front.github.io/Portfolio/`},{date:`Future`,dateTitle:`The Next`,themeTitle:`Future Projects`,tech:[{unknown:`unknown`}],log:`I am currently seeking Junior Frontend Developer
+                    40%)`,explore:`Explore the Island`,exploreImg:`./images/index/timeline/portfolio.webp`,exploreLink:`https://nathan-front.github.io/Portfolio/`},{date:`JUN 2026`,dateTitle:`The Manifestation`,themeTitle:`Personal Portfolio to React`,tech:[{html:`HTML`},{css:`CSS`},{javascript:`JAVASCRIPT`},{react:`REACT`}],log:`With the desire to forge a React version of my portfolio ship and prepare 
+    it as a treasure worthy of my CV, I immediately set sail to rebuild this vessel 
+    and discover how it would perform upon the React seas.
+        However, a month had passed since my last voyage through React waters, and 
+        my previous vanilla JavaScript ship had taken a long journey to complete 
+        due to the many image treasures I had to craft and polish. When I finally 
+        installed the React Kit, my mind felt like a foggy sea with no compass to 
+        guide me. I had lost my sense of direction and could not remember which course to chart first.
+        So I summoned my trusty AI companion once again to help awaken the crew and 
+        restore our way of thinking. It took two days of sailing before we found 
+        our rhythm and returned to the component-based waters of React.
+        After that, the voyage became smoother, though we still faced storms along 
+        the way, from adjusting the ship's design to repairing the code beneath its deck. 
+        Some of the CSS needed reforging since this vessel sailed with a single index.html 
+        map compared to the old vanilla ship.
+        Even the EmailJS treasure chest needed a few locks adjusted, as the sending of form messages required some extra tuning before it could function properly. In the end, the ship continued forward, stronger and better prepared for the adventures ahead.`,acquired:`AppContent rendering tecnique, backdrop page loader React version, EmailJS implementation React version`,treasure:`Proper setup of EmailJS in React, background image depending to what page is opened. Letter-typing effect in React`,weathered:`Tricksy (I had to change/adjust some of the code to just make it look or atleast the same from its previous version.)`,explore:`Explore the Island`,exploreImg:`./images/index/timeline/portfolio.webp`,exploreLink:``},{date:`Future`,dateTitle:`The Next`,themeTitle:`Future Projects`,tech:[{unknown:`unknown`}],log:`I am currently seeking Junior Frontend Developer
             positions where I can deploy my skills, join a crew,
             and continue growing as a professional. I plan to keep
             upgrading this portfolio vault, though I may keep

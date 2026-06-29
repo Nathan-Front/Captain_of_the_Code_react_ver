@@ -26,13 +26,11 @@ function AppContent() {
       page = "voyage"; //default first page
     }
     document.body.dataset.page = page;
-    setLoading(true);
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 700);
+
+    setLoading(false);
+
     return () => {
       delete document.body.dataset.page;
-      clearTimeout(timer);
     };
   }, [location]);
 

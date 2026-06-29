@@ -1,3 +1,4 @@
+import "./contactFirstSection.css";
 import { contactFirst, contactText } from "./data/contactFirstSection.js";
 
 function ContactFirstSection() {

@@ -1,3 +1,4 @@
+import "./manifestFirstSection.css";
 import {
   captain,
   captainInfo,

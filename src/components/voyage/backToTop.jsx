@@ -1,3 +1,4 @@
+import "./backToTop.css";
 import { useState, useEffect, useRef } from "react";
 function BackToTop() {
   const [showBackToTop, setShowBackToTop] = useState(false);

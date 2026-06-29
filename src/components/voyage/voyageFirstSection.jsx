@@ -1,3 +1,4 @@
+import "./voyageFirstSection.css";
 import { title, text, cotactBtn } from "./data/voyageFirstSection.js";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -42,7 +43,7 @@ function VoyageFirstSection() {
             </span>
           ))}
         </p>
-        <Link to="/" className="contact-btn">
+        <Link to="/dropAnchor" className="contact-btn">
           {cotactBtn}
         </Link>
         <div className="map">

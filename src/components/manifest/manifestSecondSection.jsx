@@ -1,3 +1,4 @@
+import "./manifestSecondSection.css";
 import { Fragment } from "react";
 import { secondSection } from "./data/manifestSecondSection.js";
 

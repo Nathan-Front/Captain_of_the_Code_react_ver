@@ -1,3 +1,4 @@
+import "./contactSecondSection.css";
 import { secondSection } from "./data/contactSecondSection.js";
 import { Fragment } from "react";
 import { useState } from "react";

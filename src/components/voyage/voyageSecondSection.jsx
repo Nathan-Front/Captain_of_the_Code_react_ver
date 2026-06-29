@@ -1,3 +1,4 @@
+import "./voyageSecondSection.css";
 import { useState, useEffect, useRef } from "react";
 import { description, timelineContent } from "./data/voyageSecondSection.js";
 

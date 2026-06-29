@@ -55,7 +55,11 @@ function ContactSecondSection() {
               <Fragment key={i}>
                 <div className={subCon.headerContainer} key={i}>
                   <h2>{subCon.header}</h2>
-                  <img src={subCon.headerImg} alt={subCon.headerImgAlt} />
+                  <img
+                    src={subCon.headerImg}
+                    alt={subCon.headerImgAlt}
+                    loading="lazy"
+                  />
                 </div>
                 {subCon.formContainer && (
                   <form id={subCon.formContainer} onSubmit={inputHandler}>
@@ -119,7 +123,11 @@ function ContactSecondSection() {
                   <ul>
                     {subCon.listContent.map((listItem, h) => (
                       <li key={h}>
-                        <img src={listItem.image} alt={listItem.imageAlt} />
+                        <img
+                          src={listItem.image}
+                          alt={listItem.imageAlt}
+                          loading="lazy"
+                        />
                         <div>
                           <h4>{listItem.title}</h4>
                           <p>{listItem.text}</p>

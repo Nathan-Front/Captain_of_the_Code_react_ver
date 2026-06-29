@@ -38,20 +38,27 @@ function AppContent() {
 
   return (
     <>
-      <Nav />
+      <header>
+        <Nav />
+      </header>
+
       {loading ? (
         <Loading />
       ) : (
-        <Suspense>
-          <Routes>
-            <Route path="/" element={<Voyage />} />
-            <Route path="/manifest" element={<Manifest />} />
+        <main>
+          <Suspense>
+            <Routes>
+              <Route path="/" element={<Voyage />} />
+              <Route path="/manifest" element={<Manifest />} />
 
-            <Route path="/dropAnchor" element={<DropAnchor />} />
-          </Routes>
-        </Suspense>
+              <Route path="/dropAnchor" element={<DropAnchor />} />
+            </Routes>
+          </Suspense>
+        </main>
       )}
-      <Foot />
+      <footer>
+        <Foot />
+      </footer>
     </>
   );
 }

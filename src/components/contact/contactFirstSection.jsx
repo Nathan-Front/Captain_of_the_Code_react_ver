@@ -10,14 +10,23 @@ function ContactFirstSection() {
             {item.imageList && (
               <>
                 {item.imageList.map((imgList, i) => (
-                  <img src={imgList.images} alt={imgList.imagesAlt} key={i} />
+                  <img
+                    src={imgList.images}
+                    alt={imgList.imagesAlt}
+                    key={i}
+                    loading="lazy"
+                  />
                 ))}
               </>
             )}
             {item.title && (
               <>
                 <h1>{item.title}</h1>
-                <img src={item.titleImg} alt={item.titleImgAlt} />
+                <img
+                  src={item.titleImg}
+                  alt={item.titleImgAlt}
+                  loading="lazy"
+                />
               </>
             )}
           </div>

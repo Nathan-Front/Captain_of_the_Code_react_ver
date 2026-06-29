@@ -15,11 +15,13 @@ function ManifestFirstSection() {
             src="./images/cv/roundFrame.webp"
             alt="frame image"
             className="frame-image"
+            loading="lazy"
           />
           <img
             src="./images/cv/avatar.webp"
             alt="avatar image"
             className="avatar-image"
+            loading="lazy"
           />
         </div>
         {captain.map((item, index) => (
@@ -46,7 +48,7 @@ function ManifestFirstSection() {
 
               {item.tavern && (
                 <>
-                  <img src={item.images} alt={item.alt} />
+                  <img src={item.images} alt={item.alt} loading="lazy" />
                   <span>{item.tavern}: </span>
                   <a
                     href={item.links}
@@ -64,7 +66,9 @@ function ManifestFirstSection() {
         <ul className="portfolio-container">
           {finest.map((item, c) => (
             <li key={c}>
-              {item.images && <img src={item.images} alt={item.alt} />}
+              {item.images && (
+                <img src={item.images} alt={item.alt} loading="lazy" />
+              )}
               {item.title && <h3 className="portfolio-title">{item.title}</h3>}
               {item.web && <span>{item.web}</span>}
               {item.links && (
@@ -80,11 +84,13 @@ function ManifestFirstSection() {
         <ul className="language-container">
           {tongues.map((item, d) => (
             <li key={d}>
-              {item.titleImg && <img src={item.titleImg} alt={item.titleAlt} />}
+              {item.titleImg && (
+                <img src={item.titleImg} alt={item.titleAlt} loading="lazy" />
+              )}
               {item.title && <h3>{item.title}</h3>}
               {item.lang && (
                 <>
-                  <img src={item.images} alt={item.alt} />
+                  <img src={item.images} alt={item.alt} loading="lazy" />
                   <p>{item.lang}</p>
                 </>
               )}

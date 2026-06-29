@@ -8,17 +8,23 @@ function ManifestSecondSection() {
       <section className="profile-second-section">
         {secondSection.map((item, index) => (
           <div className={item.container} key={index}>
-            <img src={item.seal} alt="seal image" className="seal" />
+            <img
+              src={item.seal}
+              alt="seal image"
+              className="seal"
+              loading="lazy"
+            />
             {item.tack.map((tack, a) => (
               <img
                 className={tack.tack}
                 src={item.tackImg}
                 alt="brass tack image"
                 key={a}
+                loading="lazy"
               />
             ))}
             <h3>
-              <img src={item.titleImg} alt={"Anchor Icon"} />
+              <img src={item.titleImg} alt={"Anchor Icon"} loading="lazy" />
               {item.title}
             </h3>
 
@@ -33,6 +39,7 @@ function ManifestSecondSection() {
                         <img
                           src={traits.subTitleImg}
                           alt={traits.subTItleAlt}
+                          loading="lazy"
                         />
                       </div>
                     )}
@@ -58,6 +65,7 @@ function ManifestSecondSection() {
                           <img
                             src={subVoyage.datesImg}
                             alt={subVoyage.datesAlt}
+                            loading="lazy"
                           />
                         )}
                         {subVoyage.datesText && <p>{subVoyage.datesText}</p>}
@@ -72,6 +80,7 @@ function ManifestSecondSection() {
                                   <img
                                     src={subVoyage.treasureImg}
                                     alt={subVoyage.treasureAlt}
+                                    loading="lazy"
                                   />
                                   <div>
                                     <span>{subVoyage.log}</span>
@@ -98,7 +107,7 @@ function ManifestSecondSection() {
               <ul className={item.academy}>
                 {item.training.map((training, g) => (
                   <li key={g}>
-                    <img src={item.dateImg} alt={item.dateAlt} />
+                    <img src={item.dateImg} alt={item.dateAlt} loading="lazy" />
                     <span>{training.date}</span>
                     <p>{training.text}</p>
                   </li>

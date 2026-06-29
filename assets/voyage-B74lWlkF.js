@@ -1,0 +1,318 @@
+import{a as e,i as t,n,o as r,t as i}from"./index-9dGBbk_7.js";var a=t(),o=`Welcome Aboard!`,s=`Serving as a Technical Instructor for a Japanese company, I spend my days helping crewmates navigate their learning journeys. Beyond my duties, I have devoted the past year to exploring the ever-changing seas of Web Development, steadily building a strong foundation in modern web technologies. Each new project is another voyage, each challenge another storm to overcome, as I continue my quest to grow into a capable and dependable developer.`,c=`Contact The Captain`,l=r(e(),1),u=i();function d(){let[e,t]=(0,l.useState)(0),r=s.split(` `),i=s.split(``),a=0;return(0,l.useEffect)(()=>{let e=0,n=setInterval(()=>{e<i.length?(t(e+1),e++):clearInterval(n)},20);return()=>clearInterval(n)},[]),(0,u.jsx)(u.Fragment,{children:(0,u.jsxs)(`section`,{className:`about-section`,id:`about`,children:[(0,u.jsx)(`h1`,{className:`split-reveal`,"data-text":`Welcome Aboard!`,children:o}),(0,u.jsx)(`p`,{className:`typewriter-text`,id:`multiline-typewriter`,children:r.map((t,n)=>(0,u.jsxs)(`span`,{className:`word`,children:[t.split(``).map(t=>{let n=a++;return(0,u.jsx)(`span`,{className:n<e?`revealed`:``,children:t},n)}),`\xA0`]},n))}),(0,u.jsx)(n,{to:`/dropAnchor`,className:`contact-btn`,children:c}),(0,u.jsx)(`div`,{className:`map`,children:(0,u.jsxs)(`svg`,{className:`route-svg`,viewBox:`0 0 1000 200`,preserveAspectRatio:`none`,children:[(0,u.jsx)(`path`,{id:`route`,d:`M950 100\r
+          C750 0, 650 200, 500 120\r
+          C350 40, 300 250, 150 150\r
+          C80 100, 50 50, 20 100\r
+          `}),(0,u.jsxs)(`g`,{className:`treasure-x`,transform:`translate(20 100)`,children:[(0,u.jsx)(`line`,{x1:`-6`,y1:`-6`,x2:`6`,y2:`6`}),(0,u.jsx)(`line`,{x1:`-6`,y1:`6`,x2:`6`,y2:`-6`})]}),(0,u.jsxs)(`image`,{href:`./images/footer/pirateship.webp`,x:`-20`,y:`-15`,width:`30`,height:`15`,transform:`scale(2,1)`,className:`ship`,children:[(0,u.jsx)(`animateMotion`,{dur:`30s`,repeatCount:`indefinite`,rotate:`auto-reverse`,children:(0,u.jsx)(`mpath`,{href:`#route`})}),(0,u.jsx)(`animate`,{attributeName:`opacity`,values:`1;1;0.2`,keyTimes:`0;0.7;1`,dur:`30s`,repeatCount:`indefinite`})]})]})})]})})}var f=[{text:`During the great plague, I first set sail into the seas of Web Development, revisiting the arts of HTML, CSS, and JavaScript. With plenty of time on my hands, I spent several months strengthening my understanding of the fundamentals and charting the beginnings of my journey.`},{text:`As life gradually returned to normal and duties ashore grew heavier, my studies slowed. Long days of work often left little energy for further exploration, and my voyage drifted from its original course.`},{text:`Yet about a year ago, the call of a new horizon grew too strong to ignore. Seeking fresh challenges and a renewed sense of accomplishment, I committed myself to learning programming once more. Since then, I have focused on steady progress, believing that even the smallest step forward each day brings me closer to my destination.`},{text:`This website serves as my captain's log, a record of the knowledge I've gathered, the projects I've built, and the milestones I've reached along the way. It is both a showcase of my journey and a reminder that every great voyage begins with a single course set toward the horizon.`}],p=[{date:`OCT - NOV 2025`,dateTitle:`The Beginning`,themeTitle:`Single-Page E-commerce Website`,tech:[{html:`HTML`},{css:`CSS`},{javascript:`JAVASCRIPT`}],log:`This expedition marked my first attempt at
+            establishing a merchant vessel upon the digital seas.
+            Armed with HTML, CSS, and vanilla JavaScript, I set
+            sail to build a single-page trading post. The voyage
+            was far from smooth, as I had only recently returned
+            to studying web development and found myself
+            relearning the ropes of Flexbox and CSS Grid. To keep
+            track of the crew's cargo and provisions, I employed
+            localStorage to manage cart data. Along the way, I
+            consulted maps and journals from YouTube and other
+            distant ports. When the charts proved difficult to
+            interpret, AI acted as a seasoned navigator, helping
+            me understand the foundations of the ship's design and
+            the principles behind its construction. Though I can
+            now spot many signs of an inexperienced sailor in this
+            vessel, the journey was invaluable. Every storm
+            weathered and every mistake corrected helped lay the
+            foundation for the voyages that followed, transforming
+            uncertainty into experience and curiosity into skill.`,acquired:`Flexbox, CSS Grid, localStorage, floating navigation,
+                signup/login functionality, adding/deleting products
+                in a cart, and calculating the total order price.`,treasure:`Implementing responsive design, managing state with
+                    localStorage, passing data between multiple functions,
+                    and implementing the signup/login functionality.`,weathered:`Formidable (I stopped following tutorials and
+                    challenged myself to build the project independently what I was thinking but I guess we still had to looked into references a lot.)`,explore:`Explore the Island`,exploreImg:`./images/index/timeline/first.webp`,exploreLink:`https://nathan-front.github.io/Ecommerce/`},{date:`NOV - DEC 2025`,dateTitle:`The Struggle`,themeTitle:`Multi-Page Coffee Shop Website`,tech:[{html:`HTML`},{css:`CSS`},{javascript:`JAVASCRIPT`}],log:`After successfully establishing my first trading
+            outpost upon the digital seas, I set my sights on a
+            far grander expedition, constructing a website that
+            spanned multiple islands connected by well-charted
+            routes. Confident from my previous voyage, I believed
+            I was ready to navigate these larger waters. However,
+            I quickly discovered that this journey would test my
+            skills far more than I had anticipated. For this
+            expedition, I challenged myself to rely less on my
+            trusted navigator, AI, and instead consult the maps
+            and lessons gathered from earlier voyages. Despite
+            this, I encountered many storms along the way,
+            particularly when attempting to master touch-screen
+            interactions. As these waters were unfamiliar to me, I
+            sought guidance from AI to better understand the
+            mechanics before continuing the journey under my own
+            command. This voyage taught me how to establish
+            reliable trade routes between multiple islands by
+            linking pages together and managing navigation across
+            the entire archipelago. I also reinforced the ship's
+            design with responsive construction techniques,
+            ensuring the vessel could sail smoothly across seas of
+            all sizes, from small mobile skiffs to large desktop
+            galleons. While I still consulted experienced
+            navigators when necessary, I focused far more on
+            charting my own course, solving problems
+            independently, and relying less on tutorial maps. This
+            expedition became a major milestone in my journey as a
+            web developer, pushing me to strengthen previously
+            acquired skills while learning to navigate more
+            complex waters. Though the voyage was filled with
+            storms and challenges, the treasure gained was
+            invaluable, leaving me with a deeper understanding of
+            multi-page website development and a stronger
+            foundation for the adventures that lay ahead.`,acquired:`Flexbox, CSS Grid, box-shadow and text-shadow effects,
+                burger-menu functionality, localStorage, mobile
+                navigation, image carousel implementation,
+                touch-screen functionality, signup/login
+                functionality, adding/deleting products from a cart,
+                calculating total order prices, and developing a
+                simple seat reservation system.`,treasure:`Implementing responsive design, passing data between
+                    multiple functions, touch-screen functionality,
+                    burger-menu functionality, seat reservation
+                    functionality, carousel implementation, working with
+                    asynchronous fetch requests, and rendering cart data
+                    across multiple pages.`,weathered:`Grueling (The touch-screen functionality was
+                    particularly difficult, and I had to use AI as a
+                    learning resource to understand how to implement it
+                    effectively. The seat reservation too was also a
+                    challenge, as it required managing state and user
+                    interactions in a more complex way than the previous
+                    project.)`,explore:`Explore the Island`,exploreImg:`./images/index/timeline/second.webp`,exploreLink:`https://nathan-front.github.io/Coffee-webpage/`},{date:`DEC 26th - 31st`,dateTitle:`React Introduction`,themeTitle:`Youtube Tutorial of React fundamentals`,tech:[{react:`REACT`},{aws:`AWS`}],log:`After successfully navigating the waters of multi-page
+            website development, I set sail toward the uncharted
+            continent of React. Guided by a YouTube navigator's
+            charts, I learned the fundamentals of components,
+            state management, and props while exploring unfamiliar
+            territory. This voyage also marked my first expedition
+            into AWS deployment. From preparing the vessel with
+            new tools and packages to launching it beyond my local
+            harbor, nearly every step presented new challenges.
+            Though the journey was filled with rough seas and
+            unfamiliar workflows, it provided valuable insight
+            into modern web development practices and expanded my
+            understanding of the technologies used across the
+            digital seas.`,acquired:`Setting up a React development environment, deploying
+                applications to AWS, working with components, managing
+                state, passing props between components, and
+                understanding the overall structure and workflow of
+                React applications.`,treasure:`Accustomed to navigating with vanilla JavaScript, I
+                    found React's component-based architecture to be
+                    unfamiliar territory. Learning state management,
+                    passing props between components, and deploying a
+                    React application to AWS presented many challenges,
+                    but the voyage proved worthwhile. The experience
+                    provided a strong foundation in both React and AWS,
+                    and I hope to revisit these waters when embarking on
+                    larger future expeditions.`,weathered:`Treacherous (I initially thought I could complete it
+                    without much difficulty, but I quickly realized I had
+                    underestimated the complexity. I used AI more than
+                    expected and spent a significant amount of time
+                    researching concepts to better understand how React
+                    and AWS work.)`,explore:`Explore the Island *I dont have the exact map of the
+                island so I will just share the youtube course I had
+                followed.`,exploreImg:`./images/index/timeline/youtube.webp`,exploreLink:`https://www.youtube.com/watch?v=TtPXvEcE11E&t=12824s`},{date:`JAN - FEB 2026`,dateTitle:`The Level Up`,themeTitle:`Multi-Page Hotel Website`,tech:[{html:`HTML`},{css:`CSS`},{javascript:`JAVASCRIPT`}],log:`This project was a much more formidable challenge than
+            the Coffee Website I previously charted. I dared
+            myself to build a sprawling, multi-page Hotel Port
+            with advanced features and a highly polished
+            aesthetic. Across the voyage, I focused on sharpening
+            my layout skills, utilizing Flexbox and CSS Grid to
+            create a responsive design capable of weathering any
+            screen size. Compared to the scripting, the true
+            battle was fought on the design front. Charting the
+            entire visual template from scratch left me thoroughly
+            exhausted, but proud of the haul. It was during this
+            grueling endeavor that I began questioning how digital
+            strongholds manage online tribute and process coin
+            transactions. Though I didn't implement a payment
+            gateway on this particular vessel, it successfully
+            sparked my interest in plundering those complex
+            systems in the near future. 
+            
+            "Edit: just added the payment gateway"`,acquired:`Timed image carousel, on-click page scroll, show
+                more/less functionality, date range picker, flip card,
+                timeline content, and FAQ function.`,treasure:`I can honestly say that the design aspect of this
+                    project was more challenging than the scripting.
+                    Coming up with the entire design and template from
+                    scratch was quite difficult, especially since I was
+                    already feeling tired while working on it. I had to
+                    put a lot of thought into the layout, color scheme,
+                    and overall aesthetic of the website to make it
+                    visually appealing.`,weathered:`Arduous (The work is 60% CSS here)`,explore:`Explore the Island`,exploreImg:`./images/index/timeline/third.webp`,exploreLink:`https://nathan-front.github.io/Hotel-booking/`},{date:`FEB - MAR 2026`,dateTitle:`The Rendering`,themeTitle:`Single-Page E-commerce Website to React`,tech:[{html:`HTML`},{css:`CSS`},{javascript:`JAVASCRIPT`},{react:`REACT`}],log:`After conquering the multi-page hotel website using
+            vanilla JavaScript, I set my sights on a tougher
+            bounty: converting my existing fleet of projects into
+            a React application. This voyage proved much more
+            complex than the traditional JavaScript route. It
+            required me to not only port over the same features,
+            but completely adapt them to fit React's modular,
+            component-based architecture. To navigate these
+            unfamiliar waters, I spent a massive amount of time
+            reviewing tutorials and training maps from seasoned
+            captains to master application structure and state
+            management. When faced with uncharted technical
+            anomalies, I utilized AI as a digital navigator to
+            help steer me through. Working with React forced me to
+            break away from my traditional scripting habits. I
+            learned to stop looking at the code as a single wooden
+            plank and start thinking in terms of isolated
+            components, dynamic states, and how the various parts
+            of the vessel communicate across the sea.`,acquired:`useState, useEffect, component-based architecture,
+                lifting state up, passing props between components,
+                ternary operators for conditional rendering.`,treasure:`Components base way of thinking, lifting up state,
+                    installing the kit, and deploying a React project in
+                    Github.`,weathered:`Perilous (I watch and searched more than I work here.
+                    Installing the kit was confusing a lot at the
+                    beginning that I created 4 copies of this project just
+                    trying to properly get the React kit installed and set
+                    up.)`,explore:`Explore the Island`,exploreImg:`./images/index/timeline/fourth.webp`,exploreLink:`https://nathan-front.github.io/Ecommerce_react_ver/`},{date:`MAR 2026`,dateTitle:`The Confusions`,themeTitle:`Multi-Page Coffee Shop Website to React`,tech:[{html:`HTML`},{css:`CSS`},{javascript:`JAVASCRIPT`},{react:`REACT`}],log:`I thought I had a solid grasp of how React functioned
+            after converting my single-page E-commerce website, so
+            I confidently took on the challenge of converting a
+            more complex, multi-page coffee shop platform. I
+            quickly realized I had underestimated the voyage. This
+            project was significantly more formidable than the
+            single-page build, demanding a much tighter grip on
+            managing state and props across scattered components
+            and pages. I found myself struggling to effectively
+            structure the application's architecture and regulate
+            the flow of data between components. Ultimately, I
+            spent far more time researching solutions and studying
+            React documentation than writing the actual script. It
+            was the most challenging technical storm I had faced
+            since beginning my web development journey. Deploying
+            the vessel brought its own set of hurdles. Because the
+            application utilized multiple routes via
+            BrowserRouter, learning how to properly configure and
+            deploy it to GitHub Pages required a completely new
+            map. Following extensive trial and error—and utilizing
+            AI as a digital navigator—I successfully guided the
+            project into port. This endeavor pushed me to deepen
+            my understanding of React's lifecycle and taught me
+            how to successfully manage large-scale,
+            component-based architectures.`,acquired:`Lifting up state, passing props between components,
+                BrowserRouter for routing, Github gh-pages for
+                deployment and useRef hook.`,treasure:`Lifting up state, deploying a React project that uses
+                    BrowserRouter, and installing the kit.`,weathered:`Intricate (I relied on AI a lot for this project,
+                    especially when trying to deploy the application to
+                    GitHub Pages and install the required React packages.
+                    I spent a lot of time searching for guides and
+                    tutorials, but many of them either lacked clear
+                    explanations or did not match my specific setup.
+                    Getting everything configured correctly was one of the
+                    most frustrating parts when I was doing this project.)`,explore:`Explore the Island`,exploreImg:`./images/index/timeline/fifth.webp`,exploreLink:`https://nathan-front.github.io/Coffee_webpage_react_ver/`},{date:`MAR - APR 2026`,dateTitle:`The Sinking In`,themeTitle:`Multi-Page Hotel Website to React`,tech:[{html:`HTML`},{css:`CSS`},{javascript:`JAVASCRIPT`},{react:`REACT`}],log:`It was during this project that React's
+            component-based philosophy finally clicked for me.
+            After navigating some initial turbulence with
+            component architecture in my earlier work, I emerged
+            with a much stronger understanding of how to
+            effectively architect applications and regulate state
+            and props across multiple levels. The voyage wasn't
+            without its challenges. Lifting state up and managing
+            the complex flow of data between dependent components
+            proved to be a formidable task. However, completing
+            this project significantly boosted my confidence in
+            working with the framework. The final hurdle arrived
+            during deployment. Launching the application to GitHub
+            Pages presented unique challenges that forced me to
+            pivot and implement a completely different deployment
+            strategy than my previous builds. Ultimately, this
+            project gave me a profound appreciation for React,
+            showing me firsthand the massive advantages of
+            utilizing a modular, component-based architecture to
+            build complex, scalable web applications.`,acquired:`HashRouter for routing, gh-pages for deployment,
+                    separating more components into smaller pieces,
+                    putting content inside a JS file and rendering it
+                    through map function.`,treasure:`Deployment when using HashRouter, deploying the file
+                    while it is inside a folder (deploying the folder
+                    itself).`,weathered:`Treacherous (I encountered some issues when trying to
+                    deploy this project on GitHub Pages, especially since
+                    it used HashRouter for routing. And, since the files
+                    was also inside a folder itselt that I had to deploy
+                    the folder instead of the files directly)`,explore:`Explore the Island`,exploreImg:`./images/index/timeline/sixth.webp`,exploreLink:`https://nathan-front.github.io/Hotel_booking_react_ver/`},{date:`APR 2026`,dateTitle:`The Enjoyment`,themeTitle:`Multi-Page Jewelry Website`,tech:[{html:`HTML`},{css:`CSS`},{javascript:`JAVASCRIPT`}],log:`Following the completion of my previous React project,
+            my momentum was so high that I immediately launched
+            into this new build. While my earlier voyages required
+            me to design and template every visual element from
+            scratch, for this project, I utilized AI to map out a
+            pre-designed template for me to work within. This
+            approach made the development cycle significantly more
+            enjoyable, as it relieved the heavy lifting on the
+            design front and allowed me to focus purely on
+            engineering features and learning advanced techniques.
+            Operating with a pre-charted blueprint was a
+            refreshing change of pace; it granted me the freedom
+            to experiment with complex functionalities without
+            being constrained by layout concerns. Consequently, I
+            was able to maximize my time exploring cutting-edge
+            development methodologies and learning how to
+            implement intricate new features.`,acquired:`Fetch function to render a page/content to get Data,
+                Google sheet as Database and Apps Script to be able to
+                save data to the Google sheet, Paypal API for payment
+                system, use of Webp for image format.`,treasure:`Connecting the website to a Google sheet and using it
+                    as a database, implementing the Paypal API for the
+                    payment system.`,weathered:`Formidable (The most challenging parts of the project
+                    were connecting the website to Google Sheets and using
+                    it as a database, as well as implementing the PayPal
+                    API for payment processing. Aside from those features,
+                    the project was quite enjoyable and manageable because
+                    I was able to work with a pre-designed template and
+                    focus primarily on development.)`,explore:`Explore the Island`,exploreImg:`./images/index/timeline/seventh.webp`,exploreLink:`https://nathan-front.github.io/Jewelry-page/`},{date:`APR -MAY 2026`,dateTitle:`The Eagerness`,themeTitle:`Multi-Page Jewelry Website to React`,tech:[{html:`HTML`},{css:`CSS`},{javascript:`JAVASCRIPT`},{react:`REACT`}],log:`This be the voyage I was most eager to set sail upon, for I had greatly 
+            enjoyed crafting the previous vessel and was eager to discover how its 
+            structure would evolve upon the React seas. This build allowed me to gather 
+            all the treasures I had collected from my past React expeditions, marking a 
+            grand milestone in my journey as a developer.
+            The crafting of this vessel went smoother than a calm tide; with a pre-made 
+            ship design as my map, I could steer clear of the early struggles of layout 
+            and focus my efforts on adding new features and uncovering fresh techniques.
+            In the end, this adventure became a valuable treasure chest of experience, 
+            strengthening my React skills while allowing me to build a more powerful 
+            multi-island application filled with advanced capabilities.`,acquired:`Intersection observer API, useMemo hook, filter
+                function, card hover slide text effect.`,treasure:`Connecting the website to a Google sheet and
+                    implementing the Paypal API for the payment system.`,weathered:`Monumental (The most exciting projects so far and I
+                    was able to understand more about proper usage for
+                    Flexbox and Grid. Luckily we had Golden Week and I was
+                    able to focus more on this project)`,explore:`Explore the Island`,exploreImg:`./images/index/timeline/eigth.webp`,exploreLink:`https://nathan-front.github.io/Jewelry_page_react_ver/`},{date:`MAY - JUN 2026`,dateTitle:`The Log`,themeTitle:`Personal Portfolio`,tech:[{html:`HTML`},{css:`CSS`},{javascript:`JAVASCRIPT`}],log:`After completing my last voyage, I found myself wanting to create a
+            captain's log to record the journey I had taken and showcase the waters I
+            had crossed. I had no fixed map or treasure chart to guide this project, so
+            I set sail and built it based on the ideas and visions that came to me along
+            the way. The roughest seas I faced during this voyage were the waves of CSS
+            and the art of restoring and shaping images. I called upon AI to help me
+            forge the artwork, but the treasures it returned did not always match the
+            vision I had buried in my mind. Because of this, I had to take the tools
+            into my own hands and learn the craft of image editing. My journey led me to
+            study GIMP from its very first steps, learning how to polish, reshape, and
+            refine my creations. The work of editing images proved to be a fierce storm
+            that it consumed many hours of my voyage, leaving little time for charting
+            the design of the ship itself. Yet, when the sails finally settled and the
+            voyage came to an end, I had gained new skills and discovered techniques.
+            The treasure I found was not just the finished project, but the knowledge I
+            gained along the way.`,acquired:`Image editing, CSS gradient and filter effects, backdrop when loading a
+                component in Fetch, split-reveal effect, intersectionObserver in Vanilla JS,
+                typing- effect for letters`,treasure:`Doing the filter effect in css since I was doing it separately at first,
+                    animation effect in CSS since it it my first time doing it. For the CSS, I
+                    consulted AI a lot to know how to do it. Editing of images too was a
+                    struggle. Implementation of sending email using EmailJS API.`,weathered:`Arduous (since there are only few javascript on the project, the work is
+                    more on CSS and editing of images which is about CSS 40% and image editing
+                    40%)`,explore:`Explore the Island`,exploreImg:`./images/index/timeline/portfolio.webp`,exploreLink:`https://nathan-front.github.io/Portfolio/`},{date:`JUN 2026`,dateTitle:`The Manifestation`,themeTitle:`Personal Portfolio to React`,tech:[{html:`HTML`},{css:`CSS`},{javascript:`JAVASCRIPT`},{react:`REACT`}],log:`With the desire to forge a React version of my portfolio ship and prepare 
+    it as a treasure worthy of my CV, I immediately set sail to rebuild this vessel 
+    and discover how it would perform upon the React seas.
+        However, a month had passed since my last voyage through React waters, and 
+        my previous vanilla JavaScript ship had taken a long journey to complete 
+        due to the many image treasures I had to craft and polish. When I finally 
+        installed the React Kit, my mind felt like a foggy sea with no compass to 
+        guide me. I had lost my sense of direction and could not remember which course to chart first.
+        So I summoned my trusty AI companion once again to help awaken the crew and 
+        restore our way of thinking. It took two days of sailing before we found 
+        our rhythm and returned to the component-based waters of React.
+        After that, the voyage became smoother, though we still faced storms along 
+        the way, from adjusting the ship's design to repairing the code beneath its deck. 
+        Some of the CSS needed reforging since this vessel sailed with a single index.html 
+        map compared to the old vanilla ship.
+        Even the EmailJS treasure chest needed a few locks adjusted, as the sending of form messages required some extra tuning before it could function properly. In the end, the ship continued forward, stronger and better prepared for the adventures ahead.`,acquired:`AppContent rendering tecnique, backdrop page loader React version, EmailJS implementation React version`,treasure:`Proper setup of EmailJS in React, background image depending to what page is opened. Letter-typing effect in React`,weathered:`Tricksy (I had to change/adjust some of the code to just make it look or atleast the same from its previous version.)`,explore:`Explore the Island`,exploreImg:`./images/index/timeline/portfolio.webp`,exploreLink:``},{date:`Future`,dateTitle:`The Next`,themeTitle:`Future Projects`,tech:[{unknown:`unknown`}],log:`I am currently seeking Junior Frontend Developer
+            positions where I can deploy my skills, join a crew,
+            and continue growing as a professional. I plan to keep
+            upgrading this portfolio vault, though I may keep
+            future proprietary projects under lock and key once I
+            officially enter the web development industry. My
+            ultimate horizon stretches further: I am planning to
+            conquer backend development and transition into a Full
+            Stack Developer. To achieve this, I will be setting
+            sail toward backend-related projects just as soon as I
+            have fully mastered the intricacies of the frontend
+            workflow. This is not a final anchor drop, but rather
+            a 'see you on the next horizon.'`,acquired:`Staying consistent with studying, even when tired,
+                even if it is only for an hour each day.`,treasure:`Maintaining consistency while working a full-time job.`,weathered:`Having an impostor syndrome all the time.`,explore:`Explore the Island`,exploreImg:`./images/index/timeline/future.webp`,exploreLink:``}];function m(){let e=(0,a.c)(44),t;e[0]===Symbol.for(`react.memo_cache_sentinel`)?(t={},e[0]=t):t=e[0];let[n,r]=(0,l.useState)(t),i;e[1]===Symbol.for(`react.memo_cache_sentinel`)?(i=[],e[1]=i):i=e[1];let o=(0,l.useRef)(i),s=window.innerWidth<=845,c,d;e[2]===Symbol.for(`react.memo_cache_sentinel`)?(c=()=>{let e=new IntersectionObserver(e=>{e.forEach(e=>{let t=e.target.dataset.index;r(n=>({...n,[t]:e.isIntersecting}))})},{threshold:s?.05:.2,rootMargin:`100% 0px -100px 0px`});return o.current.forEach(t=>{t?.left&&e.observe(t.left),t?.right&&e.observe(t.right)}),()=>e.disconnect()},d=[],e[2]=c,e[3]=d):(c=e[2],d=e[3]),(0,l.useEffect)(c,d);let[m,v]=(0,l.useState)(!1),y=(0,l.useRef)(null),b,x;e[4]===Symbol.for(`react.memo_cache_sentinel`)?(b=()=>{let e=y.current;if(!e)return;let t=new IntersectionObserver(e=>{let[t]=e;t.isIntersecting?v(!0):v(!1)},{threshold:0});return t.observe(e),()=>{t.disconnect()}},x=[],e[4]=b,e[5]=x):(b=e[4],x=e[5]),(0,l.useEffect)(b,x);let[S]=(0,l.useState)(ee),[C,w]=(0,l.useState)(50),[T,E]=(0,l.useState)(`down`),D,O;e[6]===Symbol.for(`react.memo_cache_sentinel`)?(D=()=>{let e=window.scrollY,t=function(){let t=window.scrollY;w(50+t/(document.body.scrollHeight-window.innerHeight)),E(t>e?`down`:`up`),e=t};return window.addEventListener(`scroll`,t),()=>{window.removeEventListener(`scroll`,t)}},O=[],e[6]=D,e[7]=O):(D=e[6],O=e[7]),(0,l.useEffect)(D,O);let[k,A]=(0,l.useState)(null),j;e[8]===Symbol.for(`react.memo_cache_sentinel`)?(j=[],e[8]=j):j=e[8];let M=(0,l.useRef)(j),N;e[9]===k?N=e[10]:(N=e=>{let t=M.current[e];if(k!==null&&k!==e){let e=M.current[k];e&&(e.style.maxHeight=`100px`)}k===e?(t.style.maxHeight=`100px`,A(null)):(t.style.maxHeight=t.scrollHeight+`px`,A(e))},e[9]=k,e[10]=N);let P=N,F=`fly-text ${m?`active`:``}`,I;e[11]===S?I=e[12]:(I=S.map(_),e[11]=S,e[12]=I);let L;e[13]!==F||e[14]!==I?(L=(0,u.jsx)(`h2`,{id:`my-journey`,className:F,ref:y,children:I}),e[13]=F,e[14]=I,e[15]=L):L=e[15];let R;e[16]===Symbol.for(`react.memo_cache_sentinel`)?(R=f.map(g),e[16]=R):R=e[16];let z;e[17]===L?z=e[18]:(z=(0,u.jsx)(`div`,{className:`timeline-upper-container`,children:(0,u.jsx)(`div`,{className:`timeline-upper-sub-container`,children:(0,u.jsx)(`div`,{className:`timeline-upper-sub-inner-container`,children:(0,u.jsx)(`div`,{className:`padding-vertical`,children:(0,u.jsxs)(`div`,{className:`timeline-upper-sub-inner-content`,children:[L,R]})})})})}),e[17]=L,e[18]=z);let B;e[19]===Symbol.for(`react.memo_cache_sentinel`)?(B=(0,u.jsx)(`div`,{className:`padding-top`}),e[19]=B):B=e[19];let V=`timeline-progress-bar ${T}`,H=`voyage-ship ${T}`,U=`${C}vh`,W;e[20]===U?W=e[21]:(W={top:U},e[20]=U,e[21]=W);let G=T===`up`?`rotate(180deg)`:`rotate(0deg)`,K;e[22]===G?K=e[23]:(K=(0,u.jsx)(`img`,{src:`./images/index/boat.webp`,className:`boat`,style:{transform:G},alt:`Voyage Ship`,loading:`lazy`}),e[22]=G,e[23]=K);let q;e[24]!==H||e[25]!==W||e[26]!==K?(q=(0,u.jsx)(`div`,{className:H,style:W,children:K}),e[24]=H,e[25]=W,e[26]=K,e[27]=q):q=e[27];let J;e[28]!==V||e[29]!==q?(J=(0,u.jsx)(`div`,{className:`timeline-progress`,children:(0,u.jsx)(`div`,{className:V,children:q})}),e[28]=V,e[29]=q,e[30]=J):J=e[30];let Y;e[31]!==n||e[32]!==k||e[33]!==P?(Y=p.map((e,t)=>(0,u.jsxs)(`div`,{className:`timeline-item ${t==p.length-1?`last-timeline-container`:``}`,children:[(0,u.jsx)(`div`,{ref:e=>{o.current[t]={...o.current[t],trigger:e}},"data-index":t,className:`timeline-trigger`}),(0,u.jsx)(`div`,{ref:e=>{o.current[t]={...o.current[t],left:e}},className:`timeline-left ${n[t]?`dateSlide `:``}`,"data-index":t,children:(0,u.jsx)(`div`,{className:`timeline-date`,children:(0,u.jsxs)(`p`,{className:`timeline-date-text`,children:[e.date,(0,u.jsx)(`br`,{}),e.dateTitle]})})}),(0,u.jsx)(`div`,{className:`timeline-center`}),(0,u.jsxs)(`div`,{ref:e=>{o.current[t]={...o.current[t],right:e}},className:`timeline-right ${n[t]?`textSlide `:``}`,"data-index":t,children:[(0,u.jsx)(`div`,{className:`margin-bottom`,children:(0,u.jsxs)(`div`,{className:`timeline-text`,children:[(0,u.jsxs)(`h3`,{children:[(0,u.jsx)(`img`,{src:`./images/index/timeline/theme.webp`,alt:`theme-icon`,loading:`lazy`}),(0,u.jsx)(`span`,{children:e.themeTitle})]}),(0,u.jsxs)(`div`,{children:[(0,u.jsx)(`img`,{src:`./images/index/timeline/technologies.webp`,alt:`tech-icon`,className:`tech-icon`}),(0,u.jsx)(`ul`,{children:e.tech.map(h)})]}),(0,u.jsxs)(`div`,{className:`log-section`,children:[(0,u.jsx)(`img`,{src:`./images/index/timeline/captainLog.webp`,alt:`log icon`,className:`log-icon`,loading:`lazy`}),(0,u.jsx)(`p`,{ref:e=>M.current[t]=e,className:`log-text collapsed`,children:e.log}),(0,u.jsx)(`button`,{className:k===t?`read-more-btn ON`:`read-more-btn`,onClick:()=>P(t),children:k===t?`Read Less`:`Read More`})]}),(0,u.jsxs)(`div`,{children:[(0,u.jsx)(`img`,{src:`./images/index/timeline/acquired.webp`,alt:`skills icon`,className:`skills-icon`,loading:`lazy`}),(0,u.jsx)(`p`,{children:e.acquired})]}),(0,u.jsxs)(`div`,{children:[(0,u.jsx)(`img`,{src:`./images/index/timeline/treasureGain.webp`,alt:`treasure-icon`,className:`treasure-icon`,loading:`lazy`}),(0,u.jsx)(`p`,{children:e.treasure})]}),(0,u.jsxs)(`div`,{children:[(0,u.jsx)(`img`,{src:`./images/index/timeline/weathered.webp`,alt:`weathered icon`,className:`weathered-icon`,loading:`lazy`}),(0,u.jsx)(`p`,{children:e.weathered})]}),(0,u.jsx)(`p`,{})]})}),(0,u.jsxs)(`div`,{className:`timeline-image-wrap`,children:[(0,u.jsx)(`p`,{children:e.explore}),(0,u.jsx)(`a`,{href:e.exploreLink,target:`_blank`,rel:`noopener noreferrer`,className:`timeline-images`,children:(0,u.jsx)(`img`,{src:e.exploreImg,alt:`page-link-image`,loading:`lazy`})})]})]})]},t)),e[31]=n,e[32]=k,e[33]=P,e[34]=Y):Y=e[34];let X;e[35]!==J||e[36]!==Y?(X=(0,u.jsxs)(`div`,{className:`timeline-component`,children:[J,Y]}),e[35]=J,e[36]=Y,e[37]=X):X=e[37];let Z;e[38]===Symbol.for(`react.memo_cache_sentinel`)?(Z=(0,u.jsx)(`div`,{className:`padding-bottom`}),e[38]=Z):Z=e[38];let Q;e[39]===X?Q=e[40]:(Q=(0,u.jsx)(`div`,{className:`timeline-lower-container`,children:(0,u.jsxs)(`div`,{className:`timeline-lower-sub-container`,children:[B,X,Z]})}),e[39]=X,e[40]=Q);let $;return e[41]!==z||e[42]!==Q?($=(0,u.jsx)(u.Fragment,{children:(0,u.jsxs)(`section`,{className:`timeline-section`,id:`projects`,children:[z,Q]})}),e[41]=z,e[42]=Q,e[43]=$):$=e[43],$}function h(e,t){return(0,u.jsx)(`li`,{children:(0,u.jsx)(`span`,{className:`${Object.values(e)}-tag`,children:Object.values(e)})},t)}function g(e,t){return(0,u.jsx)(`p`,{children:e.text},t)}function _(e){let{char:t,index:n,style:r}=e;return(0,u.jsx)(`span`,{style:r,children:t===` `?`\xA0`:t},n)}function ee(){return[...`Captain's Voyage`].map(v)}function v(e,t){return{char:e,index:t,style:{"--x":`${Math.floor(Math.random()*600)-300}px`,"--y":`${Math.floor(Math.random()*600)-300}px`,"--rotate":`${Math.floor(Math.random()*360)-180}deg`}}}function y(){let e=(0,a.c)(6),[t,n]=(0,l.useState)(!1),r=(0,l.useRef)(null),i,o;e[0]===Symbol.for(`react.memo_cache_sentinel`)?(i=()=>{let e=()=>{window.scrollY>2e3?(n(!0),clearTimeout(r.current),r.current=setTimeout(()=>{n(!1)},5e3)):n(!1)};return window.addEventListener(`scroll`,e),()=>{window.removeEventListener(`scroll`,e)}},o=[],e[0]=i,e[1]=o):(i=e[0],o=e[1]),(0,l.useEffect)(i,o);let s;e[2]===Symbol.for(`react.memo_cache_sentinel`)?(s=function(){window.scrollTo({top:0,behavior:`smooth`})},e[2]=s):s=e[2];let c=s,d=t?`back-to-top show`:`back-to-top`,f;e[3]===Symbol.for(`react.memo_cache_sentinel`)?(f=()=>c(),e[3]=f):f=e[3];let p;return e[4]===d?p=e[5]:(p=(0,u.jsx)(u.Fragment,{children:(0,u.jsx)(`button`,{id:`backToTop`,className:d,onClick:f})}),e[4]=d,e[5]=p),p}function b(){let e=(0,a.c)(1),t;return e[0]===Symbol.for(`react.memo_cache_sentinel`)?(t=(0,u.jsxs)(u.Fragment,{children:[(0,u.jsx)(d,{}),(0,u.jsx)(m,{}),(0,u.jsx)(y,{})]}),e[0]=t):t=e[0],t}export{b as default};

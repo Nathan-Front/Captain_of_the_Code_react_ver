@@ -156,6 +156,7 @@ function VoyageSecondSection() {
                             : "rotate(0deg)",
                       }}
                       alt="Voyage Ship"
+                      loading="lazy"
                     />
                   </div>
                 </div>
@@ -210,6 +211,7 @@ function VoyageSecondSection() {
                           <img
                             src="./images/index/timeline/theme.webp"
                             alt="theme-icon"
+                            loading="lazy"
                           />
                           <span>{item.themeTitle}</span>
                         </h3>
@@ -234,6 +236,7 @@ function VoyageSecondSection() {
                             src="./images/index/timeline/captainLog.webp"
                             alt="log icon"
                             className="log-icon"
+                            loading="lazy"
                           />
                           <p
                             ref={(el) => (readMoreRef.current[index] = el)}
@@ -257,6 +260,7 @@ function VoyageSecondSection() {
                             src="./images/index/timeline/acquired.webp"
                             alt="skills icon"
                             className="skills-icon"
+                            loading="lazy"
                           />
                           <p>{item.acquired}</p>
                         </div>
@@ -265,6 +269,7 @@ function VoyageSecondSection() {
                             src="./images/index/timeline/treasureGain.webp"
                             alt="treasure-icon"
                             className="treasure-icon"
+                            loading="lazy"
                           />
                           <p>{item.treasure}</p>
                         </div>
@@ -273,6 +278,7 @@ function VoyageSecondSection() {
                             src="./images/index/timeline/weathered.webp"
                             alt="weathered icon"
                             className="weathered-icon"
+                            loading="lazy"
                           />
                           <p>{item.weathered}</p>
                         </div>
@@ -287,7 +293,11 @@ function VoyageSecondSection() {
                         rel="noopener noreferrer"
                         className="timeline-images"
                       >
-                        <img src={item.exploreImg} alt="page-link-image" />
+                        <img
+                          src={item.exploreImg}
+                          alt="page-link-image"
+                          loading="lazy"
+                        />
                       </a>
                     </div>
                   </div>

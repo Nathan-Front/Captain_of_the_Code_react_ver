@@ -1,13 +1,13 @@
 import { HashRouter, Routes } from "react-router-dom";
 import { Route } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState, lazy } from "react";
 import { useLocation } from "react-router-dom";
 import Nav from "./components/navigation/nav.jsx";
 import Foot from "./components/footer/foot.jsx";
-import Voyage from "./components/voyage/voyage.jsx";
-import Manifest from "./components/manifest/manifest.jsx";
-import DropAnchor from "./components/contact/dropAnchor.jsx";
 
+const Voyage = lazy(() => import("./components/voyage/voyage.jsx"));
+const Manifest = lazy(() => import("./components/manifest/manifest.jsx"));
+const DropAnchor = lazy(() => import("./components/contact/dropAnchor.jsx"));
 function Loading() {
   return (
     <div className="loading">
@@ -42,11 +42,14 @@ function AppContent() {
       {loading ? (
         <Loading />
       ) : (
-        <Routes>
-          <Route path="/" element={<Voyage />} />
-          <Route path="/manifest" element={<Manifest />} />
-          <Route path="/dropAnchor" element={<DropAnchor />} />
-        </Routes>
+        <Suspense>
+          <Routes>
+            <Route path="/" element={<Voyage />} />
+            <Route path="/manifest" element={<Manifest />} />
+
+            <Route path="/dropAnchor" element={<DropAnchor />} />
+          </Routes>
+        </Suspense>
       )}
       <Foot />
     </>

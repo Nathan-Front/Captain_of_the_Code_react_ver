@@ -1,6 +1,7 @@
 
-import emailjs from "@emailjs/browser";
+
 export async function sendMessage(formData) {
+    const emailjs = await import("@emailjs/browser");
     const templateParams = {
             name: formData.name,
             email: formData.email,

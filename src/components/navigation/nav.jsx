@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
+import { linkImages } from "./data/nav.js";
 function Nav() {
   const [hideNav, setHideNav] = useState(false);
   const [mobileNav, setMobileNav] = useState(false);
@@ -72,76 +73,73 @@ function Nav() {
               className="close-mobile-nav"
               onClick={() => setMobileNav(false)}
             >
-              <img src="./images/nav/closeButton.webp" alt="close-button" />
+              <img
+                src="./images/nav/closeButton.webp"
+                alt="close-button"
+                loading="lazy"
+              />
               Close
             </button>
           </li>
           <li className="nav-links">
             <Link to="/" onClick={() => setMobileNav(false)}>
-              <img src="./images/nav/compassLink.webp" alt="anchor Icon" />
+              <img
+                src="./images/nav/compassLink.webp"
+                alt="anchor Icon"
+                loading="lazy"
+              />
               VOYAGE
             </Link>
           </li>
           <li className="nav-links">
             <Link to="/manifest" onClick={() => setMobileNav(false)}>
-              <img src="./images/nav/bagLink.webp" alt="bag Icon" />
+              <img
+                src="./images/nav/bagLink.webp"
+                alt="bag Icon"
+                loading="lazy"
+              />
               MANIFEST
             </Link>
           </li>
           <li className="nav-links">
             <Link to="/dropAnchor" onClick={() => setMobileNav(false)}>
-              <img src="./images/nav/anchorLink.webp" alt="anchor Icon" />
+              <img
+                src="./images/nav/anchorLink.webp"
+                alt="anchor Icon"
+                loading="lazy"
+              />
               DROP ANCHOR
             </Link>
           </li>
           <li className="mobile-footer">
             <p>Captain's Taverns</p>
             <ul>
-              <li>
-                <a
-                  href="https://github.com/Nathan-Front"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Github
-                </a>
-                <img
-                  src="./images//footer/github-round-svgrepo-com.svg"
-                  alt="github"
-                />
-              </li>
-              <li>
-                <a
-                  href="https://www.linkedin.com/in/jonathan-tindungan-8072691a1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  LinkedIn
-                </a>
-                <img
-                  src="./images//footer/linkedin-round-svgrepo-com.svg"
-                  alt="linkedIn"
-                />
-              </li>
-              <li>
-                <a
-                  href="mailto:jonathantindungan3@gmail.com?subject=Inquire"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Email
-                </a>
-                <img
-                  src="./images/footer/google-logo-fill-svgrepo-com.webp"
-                  alt="linkedIn"
-                />
-              </li>
+              {linkImages.map((item, index) => (
+                <li key={index}>
+                  <a
+                    href={item.textLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {item.text}
+                  </a>
+                  <img
+                    src={item.textImg}
+                    alt={item.textImgAlt}
+                    loading="lazy"
+                  />
+                </li>
+              ))}
             </ul>
             <span>© 2026 Jonathan. All rights reserved.</span>
           </li>
         </ul>
         <button className="mobile-nav-open" onClick={toggleMobileNav}>
-          <img src="./images/nav/telescopeLink.webp" alt="mobile-nav" />
+          <img
+            src="./images/nav/telescopeLink.webp"
+            alt="mobile-nav"
+            loading="lazy"
+          />
           Menu
         </button>
         <div

@@ -1,6 +1,8 @@
+import "./nav.css";
 import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { linkImages } from "./data/nav.js";
+
 function Nav() {
   const [hideNav, setHideNav] = useState(false);
   const [mobileNav, setMobileNav] = useState(false);

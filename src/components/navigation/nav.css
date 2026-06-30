@@ -141,29 +141,6 @@
 .main-title-container  {
     display: none;
 }
-body[data-page="voyage"] nav .main-title-container,
-body[data-page="dropAnchor"] nav> .main-title-container {
-    display: none;
-}
-body[data-page="manifest"] nav> .main-title-container {
-    position: fixed;
-    top: 0;
-    left: 30%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    width: 40%;
-    margin-top: calc(var(--nav-height));
-    padding: 1.5rem;
-    gap: 1rem;
-    background-image: url("/images/cv/woodBanner.webp");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    transform-origin: top center;
-    animation: swayFrontBack 5s ease-in-out infinite;
-    filter: drop-shadow(0 10px 10px rgba(0,0,0,.25));
-    transition: opacity 0.4s ease, visibility 0.4s ease;
-}
 @keyframes swayFrontBack {
     0%,100%{
         transform: perspective(1200px) rotateX(4deg);

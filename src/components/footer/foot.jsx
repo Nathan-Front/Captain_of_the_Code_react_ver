@@ -1,3 +1,4 @@
+import "./foot.css";
 function Foot() {
   return (
     <>

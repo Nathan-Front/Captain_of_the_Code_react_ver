@@ -1,6 +1,6 @@
 import { HashRouter, Routes } from "react-router-dom";
 import { Route } from "react-router-dom";
-import { Suspense, useEffect, useState, lazy } from "react";
+import { Suspense, useEffect, lazy } from "react";
 import { useLocation } from "react-router-dom";
 import Nav from "./components/navigation/nav.jsx";
 
@@ -19,15 +19,13 @@ function Loading() {
 
 function AppContent() {
   const location = useLocation();
-  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     let page = location.pathname.replace("/", "");
     if (page === "") {
       page = "voyage"; //default first page
     }
     document.body.dataset.page = page;
-
-    setLoading(false);
 
     return () => {
       delete document.body.dataset.page;
@@ -39,19 +37,14 @@ function AppContent() {
       <header>
         <Nav />
       </header>
-      <Suspense>
-        {loading ? (
-          <Loading />
-        ) : (
-          <main>
-            <Routes>
-              <Route path="/" element={<Voyage />} />
-              <Route path="/manifest" element={<Manifest />} />
-
-              <Route path="/dropAnchor" element={<DropAnchor />} />
-            </Routes>
-          </main>
-        )}
+      <Suspense fallback={<Loading />}>
+        <main>
+          <Routes>
+            <Route path="/" element={<Voyage />} />
+            <Route path="/manifest" element={<Manifest />} />
+            <Route path="/dropAnchor" element={<DropAnchor />} />
+          </Routes>
+        </main>
         <footer>
           <Foot />
         </footer>

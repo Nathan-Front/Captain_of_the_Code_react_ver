@@ -3,8 +3,8 @@ import { Route } from "react-router-dom";
 import { Suspense, useEffect, useState, lazy } from "react";
 import { useLocation } from "react-router-dom";
 import Nav from "./components/navigation/nav.jsx";
-import Foot from "./components/footer/foot.jsx";
 
+const Foot = lazy(() => import("./components/footer/foot.jsx"));
 const Voyage = lazy(() => import("./components/voyage/voyage.jsx"));
 const Manifest = lazy(() => import("./components/manifest/manifest.jsx"));
 const DropAnchor = lazy(() => import("./components/contact/dropAnchor.jsx"));
@@ -39,24 +39,23 @@ function AppContent() {
       <header>
         <Nav />
       </header>
-
-      {loading ? (
-        <Loading />
-      ) : (
-        <main>
-          <Suspense>
+      <Suspense>
+        {loading ? (
+          <Loading />
+        ) : (
+          <main>
             <Routes>
               <Route path="/" element={<Voyage />} />
               <Route path="/manifest" element={<Manifest />} />
 
               <Route path="/dropAnchor" element={<DropAnchor />} />
             </Routes>
-          </Suspense>
-        </main>
-      )}
-      <footer>
-        <Foot />
-      </footer>
+          </main>
+        )}
+        <footer>
+          <Foot />
+        </footer>
+      </Suspense>
     </>
   );
 }

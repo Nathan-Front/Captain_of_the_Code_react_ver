@@ -44,7 +44,7 @@ function ManifestFirstSection() {
           {taverns.map((item, b) => (
             <li key={b}>
               {item.titleImg && <img src={item.titleImg} alt={item.titleAlt} />}
-              {item.title && <h3 className="contact-title">{item.title}</h3>}
+              {item.title && <h2 className="contact-title">{item.title}</h2>}
 
               {item.tavern && (
                 <>

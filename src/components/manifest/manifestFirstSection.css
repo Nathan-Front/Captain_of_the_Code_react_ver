@@ -167,17 +167,18 @@
 }
 .contact-container> li,
 .contact-container> li> span,
-.contact-container> li> p,
+.contact-container> li> h2,
 .contact-container> li> a,
 .portfolio-container> li,
+.portfolio-container> li> h3,
 .portfolio-container> li> span,
 .portfolio-container> li> p,
 .portfolio-container> li> a,
 .language-container> li,
+.language-container> li> h3,
 .language-container> li> p {
     color: white;
     font-size: clamp(1rem, 1.2vw, 1.8rem);
-   
 }
 .tags {
     padding-left: 7px;

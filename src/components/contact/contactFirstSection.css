@@ -52,6 +52,7 @@
     width: 80%;
     height: 40px;
     margin: 0;
+    object-fit: cover;
 }
 .contact-first-section> p:nth-child(3) {
     margin-top: 2%;

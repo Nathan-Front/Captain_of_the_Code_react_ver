@@ -105,10 +105,17 @@ function ContactSecondSection() {
                         )}
                       </div>
                     ))}
-                    <input type="text" name="website" className="honeypot" />
+                    <input
+                      type="text"
+                      name="website"
+                      className="honeypot"
+                      aria-hidden="true"
+                      tabIndex="-1"
+                    />
                     <button
                       type="submit"
                       className="send-button"
+                      aria-label="send-button"
                       disabled={spinner}
                     >
                       <span
@@ -129,7 +136,7 @@ function ContactSecondSection() {
                           loading="lazy"
                         />
                         <div>
-                          <h4>{listItem.title}</h4>
+                          <h3>{listItem.title}</h3>
                           <p>{listItem.text}</p>
                         </div>
                       </li>

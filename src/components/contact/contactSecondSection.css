@@ -22,6 +22,7 @@
     width: 70%;
     height: 25px;
     margin: 8px auto;
+    object-fit: cover;
 }
 .contact-left-container> form {
     padding: 1rem;
@@ -153,6 +154,7 @@ textarea::placeholder {
     width: 80%;
     height: 25px;
     margin: 5px 0 0 18%;
+    object-fit: cover;
 }
 .contact-right-container> ul {
     width: 80%;
@@ -177,7 +179,7 @@ textarea::placeholder {
         brightness(0.9)
         sepia(0.4);
 }
-.contact-right-container> ul> li> div> h4 {
+.contact-right-container> ul> li> div> h3 {
     font-family: "Pirata One", serif;
     color: #1C1C1C;
     text-shadow: 0 0 8px rgba(212,175,55,.5);
@@ -188,7 +190,7 @@ textarea::placeholder {
 }
 .contact-right-container-title> h3,
 .contact-right-container-title> img,
-.contact-right-container> ul> li> div> h4,
+.contact-right-container> ul> li> div> h3,
 .contact-right-container> ul> li> div> p {
     mix-blend-mode: multiply;
     opacity: 0.75;

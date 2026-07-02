@@ -1,4 +1,4 @@
-import{a as e,i as t,o as n,t as r}from"./index-D9NSk0dC.js";var i=t(),a=n(e(),1),o=[{container:`about-me-container`,title:`Captain's Profile`,titleImg:`./images/cv/anchor.webp`,tackImg:`./images/cv/brassTack.webp`,tackAlt:`tack-image`,tack:[{tack:`tack tl`},{tack:`tack tr`},{tack:`tack bl`},{tack:`tack br`}],seal:`./images/cv/captainSeal.webp`,sealAlt:`seal-image`,text:`A dedicated sailor charting a new course into frontend development. With a
+import{a as e,i as t,o as n,t as r}from"./index-DomsGRLN.js";var i=t(),a=n(e(),1),o=[{container:`about-me-container`,title:`Captain's Profile`,titleImg:`./images/cv/anchor.webp`,tackImg:`./images/cv/brassTack.webp`,tackAlt:`tack-image`,tack:[{tack:`tack tl`},{tack:`tack tr`},{tack:`tack bl`},{tack:`tack br`}],seal:`./images/cv/captainSeal.webp`,sealAlt:`seal-image`,text:`A dedicated sailor charting a new course into frontend development. With a
           background in technical training and engineering support, I have spent
           years creating clear and structured learning materials. Now, I navigate
           the world of modern web development, crafting responsive and user-friendly

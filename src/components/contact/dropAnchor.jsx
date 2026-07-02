@@ -1,12 +1,12 @@
-import { lazy, Suspense } from "react";
-const ContactFirstSection = lazy(() => import("./contactFirstSection.jsx"));
-const ContactSecondSection = lazy(() => import("./contactSecondSection.jsx"));
+import ContactFirstSection from "./contactFirstSection.jsx";
+import ContactSecondSection from "./contactSecondSection.jsx";
+
 function DropAnchor() {
   return (
-    <Suspense>
+    <>
       <ContactFirstSection />
       <ContactSecondSection />
-    </Suspense>
+    </>
   );
 }
 

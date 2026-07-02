@@ -3,8 +3,7 @@ import { Route } from "react-router-dom";
 import { Suspense, useEffect, lazy } from "react";
 import { useLocation } from "react-router-dom";
 import Nav from "./components/navigation/nav.jsx";
-
-const Foot = lazy(() => import("./components/footer/foot.jsx"));
+import Foot from "./components/footer/foot.jsx";
 const Voyage = lazy(() => import("./components/voyage/voyage.jsx"));
 const Manifest = lazy(() => import("./components/manifest/manifest.jsx"));
 const DropAnchor = lazy(() => import("./components/contact/dropAnchor.jsx"));
@@ -45,10 +44,10 @@ function AppContent() {
             <Route path="/dropAnchor" element={<DropAnchor />} />
           </Routes>
         </main>
-        <footer>
-          <Foot />
-        </footer>
       </Suspense>
+      <footer>
+        <Foot />
+      </footer>
     </>
   );
 }
